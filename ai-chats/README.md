@@ -1,5 +1,8 @@
 # AI conversations
 
-The final submission must include a copy of every conversation with an AI tool used for this project, and a note on the slides and the site saying AI was used (missing note = −20% of project points).
+The final submission must include a copy of each conversation with an AI tool for this project. The slides and the site must also have a note that tells about the AI use. If the note is missing, the team loses 20% of the project points.
 
-Save each one here as `YYYY-MM-DD-<who>-<tool>-<topic>.md` (e.g. `2026-10-22-liza-claude-prototype.md`). In Claude Code, `/export` writes the current conversation to a file.
+## How to save a conversation
+1. Save each conversation in this folder.
+2. Use this file name: `YYYY-MM-DD-<name>-<tool>-<topic>.md`. Example: `2026-10-22-liza-claude-prototype.md`.
+3. In Claude Code, use the `/export` command. This command writes the conversation to a file.
