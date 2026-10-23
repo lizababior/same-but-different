@@ -4,24 +4,19 @@ This is an interactive website for CSE 194/291A (Race, Gender & Computing, UC Sa
 
 You make two people. The two people are the same, but one or two traits are different. Traits are race, gender, age, disability, religion, sexual orientation, class and skin tone. The site compares some areas of life for the two people: jobs, pay, loans, health care and AI recognition. Each difference has a fact about a group and a source for that fact. Some groups have no data. The site shows these gaps, because a gap is also a result.
 
-**Status:** prototype. The facts in `index.html` are placeholders. The team must verify each fact and put it in `data/facts.csv`.
+**Status:** research. The site code is not in this repository yet.
 
-## How to run the site
-The site has no build step.
+## Prototype
+Open the prototype here: https://same-but-different-prototype.vercel.app
 
-1. Open `index.html` in a web browser.
-2. Alternatively, serve the folder:
+![Prototype: two people with different race and skin tone, and the comparison of areas of life](docs/prototype.png)
 
-   ```sh
-   npx serve .
-   ```
-
-Live site: https://same-but-different-prototype.vercel.app
+The facts in the prototype are placeholders. The team must verify each fact and put it in `data/facts.csv`.
 
 ## Files
 | Path | Contents |
 |---|---|
-| `index.html` | The site. Now it is the prototype in one file. |
+| `docs/prototype.png` | A screenshot of the prototype. |
 | `data/facts.csv` | The fact database. `data/README.md` gives the format. |
 | `research/data-sources.md` | Possible sources for each area of life, UCSD data access, data gaps, and a check of the placeholder facts. |
 | `ai-chats/` | Copies of the conversations with AI tools. The final submission must include them. |
