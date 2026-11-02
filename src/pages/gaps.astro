@@ -1,0 +1,20 @@
+---
+import Base from '../layouts/Base.astro';
+import { loadFacts } from '../data';
+import { isGap } from '../data/fact';
+import { areaLabel, tagLabel } from '../lib/traits';
+
+const gaps = (await loadFacts()).filter(isGap);
+---
+<Base title="Gaps">
+  <article class="prose">
+    <h1>Gaps</h1>
+    <p>For some groups, nobody publishes data. A missing number is also a result: a group that is not counted is harder to see.</p>
+    <p class="todo">Owner: to be decided. Add an introduction about why gaps matter (for example, Crenshaw on intersectionality).</p>
+    <ul>
+      {gaps.map((f) => (
+        <li><strong>{f.traits.map(tagLabel).join(' + ')}</strong>, {areaLabel(f.area)}: {f.notes}</li>
+      ))}
+    </ul>
+  </article>
+</Base>

@@ -1,0 +1,10 @@
+---
+import Base from '../layouts/Base.astro';
+import Explorer from '../components/Explorer';
+import { loadFacts } from '../data';
+
+const facts = await loadFacts();
+---
+<Base title="Explore">
+  <Explorer client:load facts={facts} />
+</Base>

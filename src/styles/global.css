@@ -1,0 +1,42 @@
+@import './tokens.css';
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 500 15px/1.5 var(--font);
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+button { font: inherit; color: inherit; cursor: pointer; }
+:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+mark { background: var(--mark); color: var(--mark-ink); padding: 0 4px; border-radius: 4px; }
+.muted { color: var(--muted); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+/* page frame */
+.page { max-width: 1280px; margin: 0 auto; padding: 0 20px; }
+.site-header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px; padding: 16px 0; }
+.site-header .name { font-weight: 700; font-size: 18px; text-decoration: none; }
+.site-header nav { display: flex; flex-wrap: wrap; gap: 4px; }
+.site-header nav a { text-decoration: none; padding: 4px 12px; border-radius: var(--pill); border: var(--border) solid transparent; font-weight: 600; font-size: 14px; }
+.site-header nav a:hover { border-color: var(--line); }
+.site-header nav a[aria-current='page'] { border-color: var(--ink); }
+.banner { background: var(--mark); color: var(--mark-ink); text-align: center; font-size: 13px; font-weight: 600; padding: 6px 16px; }
+main { padding: 8px 0 48px; }
+.site-footer { border-top: var(--border) solid var(--line); padding: 16px 0 32px; color: var(--muted); font-size: 13px; display: grid; gap: 4px; }
+
+/* text pages (Markdown) */
+.prose { max-width: 70ch; }
+.prose h1 { font-size: 32px; letter-spacing: -0.01em; }
+.prose h2 { font-size: 20px; margin-top: 32px; }
+.todo { border: var(--border) dashed var(--line); border-radius: var(--radius); padding: 8px 12px; color: var(--muted); }
+
+/* shared controls */
+.btn { display: inline-flex; align-items: center; gap: 6px; height: 36px; padding: 0 16px; border-radius: var(--pill); border: var(--border) solid var(--ink); background: var(--bg); font-weight: 600; font-size: 13px; transition: transform var(--dur-fast) var(--ease-out); }
+.btn:hover { background: var(--soft); }
+.btn:active { transform: scale(0.97); }

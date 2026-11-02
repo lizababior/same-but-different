@@ -1,1 +1,10 @@
-id,area,traits,group,group_rate,comparison_group,comparison_rate,ratio,measure,statement,source_title,source_url,year,verified_by,verified_on,notes
+id,area,traits,group,group_rate,comparison_group,comparison_rate,ratio,unit,measure,statement,source_title,source_url,year,status,verified_by,verified_on,notes
+mock-hired-race,hired,race:black,Mock group A,6,Mock group B,9,0.67,percent,callback rate,MOCK: Invented example. Group A got callbacks less often than group B.,MOCK,,2026,mock,,,Invented number for development.
+mock-hired-disabled,hired,disabled,Mock group A,8,Mock group B,4,2,percent,unemployment rate,MOCK: Invented example. Group A was unemployed twice as often as group B.,MOCK,,2026,mock,,,Invented number for development.
+mock-promoted-gender,promoted,gender:woman,Mock group A,10,Mock group B,50,0.2,share,share of top jobs,MOCK: Invented example. Group A held top jobs at 0.2× its share.,MOCK,,2026,mock,,,Invented number for development.
+mock-paid-gender,paid,gender:woman,Mock group A,84,Mock group B,100,0.84,dollars,pay per $100,MOCK: Invented example. Group A earned less than group B.,MOCK,,2026,mock,,,Invented number for development.
+mock-paid-intersection,paid,race:black;gender:woman,Mock group A,65,Mock group B,100,0.65,dollars,pay per $100,MOCK: Invented intersection example. The gap is bigger than for either trait alone.,MOCK,,2026,mock,,,Invented number for development.
+mock-loan-race,loan,race:black,Mock group A,16,Mock group B,6,2.67,percent,loan denial rate,MOCK: Invented example. Group A had loan denials more often than group B.,MOCK,,2026,mock,,,Invented number for development.
+mock-care-race,care,race:native,Mock group A,30,Mock group B,15,2,percent,rate of a poor health outcome,MOCK: Invented example. Group A had the outcome twice as often.,MOCK,,2026,mock,,,Invented number for development.
+mock-ai-skin,ai,skin:dark;gender:woman,Mock group A,30,Mock group B,1,30,percent,face recognition error rate,MOCK: Invented intersection example. Errors were much more frequent for group A.,MOCK,,2026,mock,,,Invented number for development.
+mock-gap-nonbinary,paid,gender:nonbinary,Mock group A,,,,,,,MOCK: Invented gap example. No pay data exists for this group.,MOCK,,2026,mock,,,Example gap: the survey records only two genders.

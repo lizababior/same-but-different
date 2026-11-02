@@ -1,0 +1,53 @@
+---
+// Shared layout: header, mock-data banner, footer with the AI-use and maintenance notes.
+// Markdown pages use it through `layout:` in their frontmatter.
+import '../styles/global.css';
+import { loadFacts } from '../data';
+
+const { title, frontmatter } = Astro.props;
+const pageTitle = title ?? frontmatter?.title;
+const facts = await loadFacts();
+const hasMock = facts.some((f) => f.status === 'mock');
+
+const NAV = [
+  ['/', 'Explore'],
+  ['/about', 'About'],
+  ['/method', 'Method'],
+  ['/sources', 'Sources'],
+  ['/gaps', 'Gaps'],
+];
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+// Update these by hand (maintenance note required by the course).
+const LAST_UPDATED = '2026-11-02';
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet" />
+    <title>{pageTitle ? `${pageTitle} · Same But Different` : 'Same But Different'}</title>
+  </head>
+  <body>
+    {hasMock && <div class="banner" role="note">Mock data: the facts on this site are invented placeholders for development.</div>}
+    <div class="page">
+      <header class="site-header">
+        <a class="name" href="/">Same But Different</a>
+        <nav aria-label="Main">
+          {NAV.map(([href, label]) => <a href={href} aria-current={path === href ? 'page' : undefined}>{label}</a>)}
+        </nav>
+      </header>
+      <main>
+        {frontmatter ? <article class="prose"><slot /></article> : <slot />}
+      </main>
+      <footer class="site-footer">
+        <span>AI use: the team used AI tools (Claude) to help with research, the prototype and the code. All conversations are saved in the project repository.</span>
+        <span>Last updated: {LAST_UPDATED} · Maintenance plan: to be decided · Contact: to be decided</span>
+        <span>Code: MIT · Facts and text: CC BY 4.0 · <a href="https://github.com/lizababior/same-but-different">GitHub</a></span>
+      </footer>
+    </div>
+  </body>
+</html>
