@@ -32,7 +32,7 @@ Live site: https://same-but-different.vercel.app. Each push to `main` deploys th
 | Fact checks and file formats | `src/data/` |
 
 ## Prototype
-The first prototype is here: https://same-but-different-prototype.vercel.app
+This screenshot shows the first prototype. The prototype is not online. The live site above replaces it.
 
 ![Prototype: two people with different race and skin tone, and the comparison of areas of life](docs/prototype.png)
 

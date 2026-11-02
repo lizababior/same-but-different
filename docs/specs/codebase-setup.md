@@ -84,7 +84,7 @@ A static website. A build step reads the fact file, checks each fact, and makes 
 - The "backend" is the build-time data step: load the fact file, validate it, and give the facts to the pages.
 - Stack: Astro with TypeScript. The Explore page uses one React component (an Astro island). Text pages are Markdown.
 - Package manager and script runner: Bun. The code uses no Bun-only API, so `npm install` and `npm run dev` also work.
-- Hosting: a new Vercel project, `same-but-different`, linked to the GitHub repo. Each push to `main` deploys to production. A failed build keeps the last good deployment online. The prototype keeps its own Vercel project and link.
+- Hosting: a new Vercel project, `same-but-different`, linked to the GitHub repo. Each push to `main` deploys to production. A failed build keeps the last good deployment online. The prototype is not online; the screenshot shows it.
 - Workflow: all members push directly to `main`. The build is the safety check.
 
 ### Data module
@@ -135,6 +135,5 @@ A static website. A build step reads the fact file, checks each fact, and makes 
 - Pull request reviews and branch protection.
 
 ## Further notes
-- Only Liza can link the Vercel project to GitHub: connect GitHub at https://vercel.com/account/settings/authentication.
-- The prototype is at https://same-but-different-prototype.vercel.app. The screenshot is `docs/prototype.png`.
+- The prototype is not online. The screenshot `docs/prototype.png` shows it.
 - Research for the facts is in `research/data-sources.md`.
