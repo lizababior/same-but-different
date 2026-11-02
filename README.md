@@ -17,7 +17,7 @@ You need [Bun](https://bun.sh) (`curl -fsSL https://bun.sh/install | bash`) or N
 | Check the types | `bun run check` | `npm run check` |
 | Build the site (also checks the facts) | `bun run build` | `npm run build` |
 
-Each push to `main` deploys the site. If the build fails, the last good version stays online.
+Live site: https://same-but-different.vercel.app. Each push to `main` deploys the site. If the build fails, the last good version stays online.
 
 ## Where to work
 | You work on | Files |
