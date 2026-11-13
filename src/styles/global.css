@@ -26,6 +26,18 @@ mark { background: var(--mark); color: var(--mark-ink); padding: 0 4px; border-r
 .site-header nav a { text-decoration: none; padding: 4px 12px; border-radius: var(--pill); border: var(--border) solid transparent; font-weight: 600; font-size: 14px; }
 .site-header nav a:hover { border-color: var(--line); }
 .site-header nav a[aria-current='page'] { border-color: var(--ink); }
+.site-header nav { flex: 1; justify-content: flex-end; }
+.theme-toggle { display: grid; place-items: center; width: 34px; height: 34px; padding: 0; background: none; color: var(--ink); border: var(--border) solid var(--line); border-radius: var(--pill); cursor: pointer; }
+.theme-toggle:hover { border-color: var(--ink); }
+.theme-toggle svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+/* Show the moon in light mode (click = go dark) and the sun in dark mode. */
+.theme-toggle .icon-sun { display: none; }
+:root[data-theme='dark'] .theme-toggle .icon-sun { display: block; }
+:root[data-theme='dark'] .theme-toggle .icon-moon { display: none; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .theme-toggle .icon-sun { display: block; }
+  :root:not([data-theme='light']) .theme-toggle .icon-moon { display: none; }
+}
 main { padding: 8px 0 48px; }
 .site-footer { border-top: var(--border) solid var(--line); padding: 16px 0 32px; color: var(--muted); font-size: 13px; display: grid; gap: 4px; }
 
