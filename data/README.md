@@ -28,10 +28,10 @@
 | Trait | Tags |
 |---|---|
 | Race / ethnicity | `race:asian`, `race:black`, `race:hispanic`, `race:native`, `race:pi`, `race:white`, `race:multi` |
-| Gender | `gender:woman`, `gender:man`, `gender:nonbinary` |
+| Gender | `gender:woman`, `gender:man`, `gender:nonbinary`, `gender:trans` (transgender, one option for trans women and trans men) |
 | Age | `age:20s`, `age:40s`, `age:60s` |
 | Disability | `ability:wheelchair`, `ability:blind`, `ability:deaf`. Each of these tags also counts as `disabled`. |
-| Religion | `faith:muslim`, `faith:jewish` |
+| Religion | `faith:christian`, `faith:muslim`, `faith:jewish`, `faith:sikh`, `faith:atheist` |
 | Sexual orientation | `orient:lgbtq` |
 | Class | `class:firstgen`, `class:pell` |
 | Skin tone | `skin:light`, `skin:mid`, `skin:dark` |

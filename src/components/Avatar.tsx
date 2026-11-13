@@ -13,6 +13,9 @@ function svg(p: Person, shirt: string): string {
   if (p.faith === 'muslim') {
     back = `<path d="M46 112 Q46 36 100 36 Q154 36 154 112 L162 190 L38 190 Z" ${st('#5B6B8C')}/>`;
     front = `<path d="M58 96 Q60 48 100 48 Q140 48 142 96 Q134 70 100 68 Q66 70 58 96Z" ${st('#5B6B8C', 4)}/>`;
+  } else if (p.faith === 'sikh') {
+    // Turban (dastar) over the hair.
+    front = `<path d="M48 104 Q40 46 72 30 Q100 16 128 30 Q160 46 152 104 Q128 84 100 80 Q72 84 48 104Z" ${st('#E0782F')}/><path d="M100 80 L100 72 M56 82 Q84 40 134 34 M70 88 Q108 52 150 64" style="fill:none;stroke:${INK};stroke-width:3;stroke-linecap:round"/><path d="M100 80 Q88 70 100 58 Q112 70 100 80Z" ${st('#E0782F', 3)}/>`;
   } else if (p.gender === 'woman') {
     back = `<path d="M50 104 Q48 42 100 42 Q152 42 150 104 L154 170 Q100 182 46 170 Z" ${st(hair)}/>`;
     front = `<path d="M54 94 Q60 46 100 46 Q140 46 146 94 Q122 64 82 70 Q64 78 54 94Z" ${st(hair, 4)}/>`;
@@ -21,16 +24,21 @@ function svg(p: Person, shirt: string): string {
   } else {
     front = `<path d="M54 98 Q50 42 102 42 Q150 44 148 86 Q122 58 92 74 Q68 80 54 98Z" ${st(hair, 4)}/>`;
   }
-  const kippah = p.faith === 'jewish' ? `<path d="M78 50 Q100 30 122 50 Z" ${st('#2F3D57', 4)}/>` : '';
+  const cross = p.faith === 'christian'
+    ? `<path d="M90 164 L100 178 L110 164" style="fill:none;stroke:${INK};stroke-width:2"/><path d="M100 178 v16 M94 183 h12" style="fill:none;stroke:${INK};stroke-width:3.5;stroke-linecap:round"/>`
+    : '';
+  const kippah = p.faith === 'jewish' ? `<path d="M68 54 Q68 24 100 22 Q132 24 132 54 Q100 44 68 54Z" ${st('#5B8DEF', 4)}/><path d="M76 46 Q100 38 124 46" style="fill:none;stroke:#ffffff;stroke-width:3;stroke-linecap:round"/>` : '';
   const lines = p.age === '60s' ? `<path d="M70 90 q7 4 14 0 M116 90 q7 4 14 0" style="fill:none;stroke:${INK};stroke-width:2.5;stroke-linecap:round"/>` : '';
   const aid = p.ability.includes('deaf') ? `<path d="M150 96 q10 8 0 18" style="fill:none;stroke:${INK};stroke-width:6;stroke-linecap:round"/>` : '';
   const eyes = p.ability.includes('blind')
     ? `<rect x="66" y="94" width="28" height="15" rx="6" style="fill:${INK}"/><rect x="106" y="94" width="28" height="15" rx="6" style="fill:${INK}"/><path d="M94 100 h12" style="stroke:${INK};stroke-width:4"/>`
     : `<circle cx="82" cy="102" r="4.5" style="fill:${INK}"/><circle cx="118" cy="102" r="4.5" style="fill:${INK}"/>`;
   const cane = p.ability.includes('blind') ? `<path d="M178 150 L196 240" style="stroke:${INK};stroke-width:5;stroke-linecap:round"/>` : '';
-  const pin = p.orient === 'lgbtq'
-    ? ['#e03131', '#f08c00', '#fab005', '#2f9e44', '#1971c2', '#7048e8'].map((c, i) => `<rect x="118" y="${192 + i * 3}" width="18" height="3" fill="${c}"/>`).join('')
-    : '';
+  // Small flag pins on the shirt: rainbow for orientation (right), trans flag for gender (left).
+  const flag = (x: number, colors: string[]) => colors.map((c, i) => `<rect x="${x}" y="${192 + i * 3}" width="18" height="3" fill="${c}"/>`).join('');
+  const pin =
+    (p.orient === 'lgbtq' ? flag(118, ['#e03131', '#f08c00', '#fab005', '#2f9e44', '#1971c2', '#7048e8']) : '') +
+    (p.gender === 'trans' ? flag(64, ['#5bcefa', '#f5a9b8', '#ffffff', '#f5a9b8', '#5bcefa']) : '');
   // Wheelchair, front view: a big backrest and seat behind the person, wheels at the sides, legs and footrest in front.
   const chairBack = wc
     ? `<g style="stroke:${INK};stroke-width:5;stroke-linecap:round;stroke-linejoin:round">
@@ -53,7 +61,7 @@ function svg(p: Person, shirt: string): string {
       </g>`
     : '';
   return `<svg viewBox="20 20 170 230" width="100%" height="100%" aria-hidden="true">${chairBack}${back}
-    <path d="M44 ${wc ? 208 : 260} Q44 166 100 160 Q156 166 156 ${wc ? 208 : 260} Z" ${st(shirt)}/>${pin}
+    <path d="M44 ${wc ? 208 : 260} Q44 166 100 160 Q156 166 156 ${wc ? 208 : 260} Z" ${st(shirt)}/>${pin}${cross}
     <path d="M88 136 L88 162 Q100 168 112 162 L112 136" ${st(skin)}/>
     <circle cx="54" cy="104" r="8" ${st(skin, 4)}/><circle cx="146" cy="104" r="8" ${st(skin, 4)}/>
     <circle cx="100" cy="100" r="46" ${st(skin)}/>${front}${kippah}${eyes}${lines}${aid}

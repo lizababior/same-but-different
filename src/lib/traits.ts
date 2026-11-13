@@ -15,10 +15,10 @@ export const SKIN_TONES = ['#f6d7c3', '#eac0a0', '#d39b72', '#a86f48', '#7a4a2c'
 
 export const TRAIT_GROUPS = [
   { key: 'race', label: 'Race / ethnicity', multi: false, options: [['asian', 'Asian'], ['black', 'Black'], ['hispanic', 'Hispanic / Latine'], ['native', 'Native American'], ['pi', 'Pacific Islander'], ['white', 'White'], ['multi', 'Multiracial']] },
-  { key: 'gender', label: 'Gender', multi: false, options: [['woman', 'Woman'], ['man', 'Man'], ['nonbinary', 'Nonbinary']] },
+  { key: 'gender', label: 'Gender', multi: false, options: [['woman', 'Woman'], ['man', 'Man'], ['nonbinary', 'Nonbinary'], ['trans', 'Transgender']] },
   { key: 'age', label: 'Age', multi: false, options: [['20s', '20s'], ['40s', '40s'], ['60s', '60s']] },
   { key: 'ability', label: 'Ability', multi: true, options: [['wheelchair', 'Wheelchair'], ['blind', 'White cane'], ['deaf', 'Hearing aid']] },
-  { key: 'faith', label: 'Religion', multi: false, options: [['muslim', 'Hijab'], ['jewish', 'Kippah']] },
+  { key: 'faith', label: 'Religion', multi: false, options: [['christian', 'Christian'], ['muslim', 'Muslim'], ['jewish', 'Jewish'], ['sikh', 'Sikh'], ['atheist', 'Atheist']] },
   { key: 'orient', label: 'Sexual orientation', multi: false, options: [['lgbtq', 'LGBTQ+']] },
   { key: 'class', label: 'Class / education', multi: true, options: [['firstgen', 'First-gen student'], ['pell', 'Low income (Pell)']] },
 ] as const;
