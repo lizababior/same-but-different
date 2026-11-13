@@ -26,7 +26,6 @@ mark { background: var(--mark); color: var(--mark-ink); padding: 0 4px; border-r
 .site-header nav a { text-decoration: none; padding: 4px 12px; border-radius: var(--pill); border: var(--border) solid transparent; font-weight: 600; font-size: 14px; }
 .site-header nav a:hover { border-color: var(--line); }
 .site-header nav a[aria-current='page'] { border-color: var(--ink); }
-.banner { background: var(--mark); color: var(--mark-ink); text-align: center; font-size: 13px; font-weight: 600; padding: 6px 16px; }
 main { padding: 8px 0 48px; }
 .site-footer { border-top: var(--border) solid var(--line); padding: 16px 0 32px; color: var(--muted); font-size: 13px; display: grid; gap: 4px; }
 

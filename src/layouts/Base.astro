@@ -1,13 +1,10 @@
 ---
-// Shared layout: header, mock-data banner, footer with the AI-use and maintenance notes.
+// Shared layout: header, footer with the AI-use and maintenance notes.
 // Markdown pages use it through `layout:` in their frontmatter.
 import '../styles/global.css';
-import { loadFacts } from '../data';
 
 const { title, frontmatter } = Astro.props;
 const pageTitle = title ?? frontmatter?.title;
-const facts = await loadFacts();
-const hasMock = facts.some((f) => f.status === 'mock');
 
 const NAV = [
   ['/', 'Explore'],
@@ -32,7 +29,6 @@ const LAST_UPDATED = '2026-11-02';
     <title>{pageTitle ? `${pageTitle} · Same But Different` : 'Same But Different'}</title>
   </head>
   <body>
-    {hasMock && <div class="banner" role="note">Mock data: the facts on this site are invented placeholders for development.</div>}
     <div class="page">
       <header class="site-header">
         <a class="name" href="/">Same But Different</a>
