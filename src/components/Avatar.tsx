@@ -31,16 +31,34 @@ function svg(p: Person, shirt: string): string {
   const pin = p.orient === 'lgbtq'
     ? ['#e03131', '#f08c00', '#fab005', '#2f9e44', '#1971c2', '#7048e8'].map((c, i) => `<rect x="118" y="${192 + i * 3}" width="18" height="3" fill="${c}"/>`).join('')
     : '';
-  const chair = wc
-    ? `<g style="fill:none;stroke:${INK};stroke-linecap:round"><path d="M40 208 h118" stroke-width="7"/><circle cx="70" cy="228" r="18" stroke-width="5"/><circle cx="142" cy="232" r="8" stroke-width="5"/><path d="M38 160 L40 208" stroke-width="6"/></g>`
+  // Wheelchair, front view: a big backrest and seat behind the person, wheels at the sides, legs and footrest in front.
+  const chairBack = wc
+    ? `<g style="stroke:${INK};stroke-width:5;stroke-linecap:round;stroke-linejoin:round">
+        <path d="M40 140 V124 M160 140 V124" style="fill:none"/>
+        <rect x="32" y="134" width="136" height="92" rx="14" style="fill:#e6e6e6"/>
+        <ellipse cx="30" cy="212" rx="9" ry="36" style="fill:#ffffff"/>
+        <ellipse cx="170" cy="212" rx="9" ry="36" style="fill:#ffffff"/>
+      </g>`
     : '';
-  return `<svg viewBox="20 20 170 230" width="100%" height="100%" aria-hidden="true">${back}
+  const legs = '#5a6472';
+  const chairFront = wc
+    ? `<g style="stroke:${INK};stroke-width:5;stroke-linecap:round;stroke-linejoin:round">
+        <rect x="36" y="186" width="24" height="12" rx="5" style="fill:#e6e6e6"/>
+        <rect x="140" y="186" width="24" height="12" rx="5" style="fill:#e6e6e6"/>
+        <rect x="54" y="200" width="44" height="30" rx="12" style="fill:${legs}"/>
+        <rect x="102" y="200" width="44" height="30" rx="12" style="fill:${legs}"/>
+        <rect x="62" y="226" width="30" height="16" rx="6" style="fill:${legs}"/>
+        <rect x="108" y="226" width="30" height="16" rx="6" style="fill:${legs}"/>
+        <path d="M54 246 H146" style="fill:none"/>
+      </g>`
+    : '';
+  return `<svg viewBox="20 20 170 230" width="100%" height="100%" aria-hidden="true">${chairBack}${back}
     <path d="M44 ${wc ? 208 : 260} Q44 166 100 160 Q156 166 156 ${wc ? 208 : 260} Z" ${st(shirt)}/>${pin}
     <path d="M88 136 L88 162 Q100 168 112 162 L112 136" ${st(skin)}/>
     <circle cx="54" cy="104" r="8" ${st(skin, 4)}/><circle cx="146" cy="104" r="8" ${st(skin, 4)}/>
     <circle cx="100" cy="100" r="46" ${st(skin)}/>${front}${kippah}${eyes}${lines}${aid}
     <path d="M100 104 q-5 10 2 12" style="fill:none;stroke:${INK};stroke-width:3;stroke-linecap:round"/>
-    <path d="M88 126 Q100 133 112 126" style="fill:none;stroke:${INK};stroke-width:4;stroke-linecap:round"/>${chair}${cane}</svg>`;
+    <path d="M88 126 Q100 133 112 126" style="fill:none;stroke:${INK};stroke-width:4;stroke-linecap:round"/>${chairFront}${cane}</svg>`;
 }
 
 export default function Avatar({ person, shirt }: { person: Person; shirt: string }) {

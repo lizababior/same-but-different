@@ -8,7 +8,11 @@ export default function FactCard({ fact, who }: { fact: Fact; who?: string }) {
       <div className="meta">
         {who && <span>{who} · </span>}
         {gap ? 'No data' : fact.traits.length > 1 ? 'Intersection' : fact.group}
-        {fact.status !== 'verified' && <span className="status">{fact.status}</span>}
+        {fact.status !== 'verified' && (
+          <span className="status" title="A second team member has not checked this number against the source yet.">
+            {fact.status === 'mock' ? 'invented example' : 'not verified yet'}
+          </span>
+        )}
       </div>
       {!gap && <div className="ratio">{formatComparison(fact)}</div>}
       <p>{fact.statement}</p>

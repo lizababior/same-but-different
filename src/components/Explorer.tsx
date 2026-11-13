@@ -2,7 +2,7 @@
 import { useMemo, useState } from 'react';
 import type { Fact } from '../data/fact';
 import { compare, differs, type AreaComparison } from '../lib/compare';
-import { areaLabel, blankPerson, tagsOf, type Person } from '../lib/traits';
+import { areaLabel, blankPerson, type Person } from '../lib/traits';
 import Avatar from './Avatar';
 import FactCard from './FactCard';
 import TraitPicker from './TraitPicker';
@@ -16,7 +16,8 @@ export default function Explorer({ facts }: { facts: Fact[] }) {
   const [selected, setSelected] = useState<string | null>(null);
 
   const areas = useMemo(() => compare(a, b, facts), [a, b, facts]);
-  const current = areas.find((c) => c.area === selected) ?? areas.find(differs);
+  const picked = areas.find((c) => c.area === selected);
+  const current = (picked && hasFacts(picked) ? picked : undefined) ?? areas.find(differs);
 
   function reset() {
     setA(blankPerson());
@@ -46,31 +47,26 @@ export default function Explorer({ facts }: { facts: Fact[] }) {
 }
 
 function Side({ label, person, other, shirt, onChange }: { label: string; person: Person; other: Person; shirt: string; onChange: (p: Person) => void }) {
-  const theirs = tagsOf(other);
-  const extra = [...tagsOf(person)].filter((t) => !theirs.has(t)).length;
   return (
     <section className="side" aria-label={label}>
       <div className="who">
         <div className="frame"><Avatar person={person} shirt={shirt} /></div>
-        <div>
-          <div className="name">{label}</div>
-          <div className="muted small">{extra ? <><mark>{extra}</mark> trait{extra > 1 ? 's' : ''} the other doesn’t have</> : 'Nothing the other doesn’t have'}</div>
-        </div>
+        <div className="name">{label}</div>
       </div>
       <TraitPicker person={person} other={other} onChange={onChange} />
     </section>
   );
 }
 
+/** True when at least one fact (or gap) in this area applies to one of the two people. */
+const hasFacts = (c: AreaComparison) => c.onlyA.length + c.onlyB.length + c.both.length + c.gaps.length > 0;
+
 function AreaRow({ c, selected, onSelect }: { c: AreaComparison; selected: boolean; onSelect: () => void }) {
-  const count = (side: 'A' | 'B') => (side === 'A' ? c.onlyA : c.onlyB).length + c.gaps.filter((g) => g.who === side).length;
-  const different = differs(c);
+  const available = hasFacts(c);
   return (
-    <button type="button" className={`area${selected ? ' sel' : ''}`} aria-pressed={selected} onClick={onSelect}>
+    <button type="button" className={`area${selected ? ' sel' : ''}`} aria-pressed={selected} disabled={!available} onClick={onSelect}>
       <span className="lbl">{areaLabel(c.area)}</span>
-      <span className="counts">
-        {different ? <mark>{count('A')} left · {count('B')} right</mark> : <span className="muted">{c.both.length ? 'same facts' : 'no facts'}</span>}
-      </span>
+      {available && !differs(c) && <span className="counts muted">same for both</span>}
     </button>
   );
 }

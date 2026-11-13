@@ -23,7 +23,8 @@
 .center { position: sticky; top: 16px; }
 .areas { border: var(--border) solid var(--ink); border-radius: var(--radius-lg); padding: 8px; display: grid; gap: 2px; }
 .area { display: flex; justify-content: space-between; align-items: center; gap: 8px; width: 100%; text-align: left; background: none; border: var(--border) solid transparent; border-radius: var(--radius); padding: 10px 12px; }
-.area:hover { background: var(--soft); }
+.area:hover:not(:disabled) { background: var(--soft); }
+.area:disabled { color: var(--muted); opacity: 0.5; cursor: default; }
 .area.sel { background: var(--soft); border-color: var(--ink); }
 .area .lbl { font-weight: 700; }
 .area .counts { font-size: 13px; font-weight: 600; }
