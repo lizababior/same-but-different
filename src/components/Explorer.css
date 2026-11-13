@@ -36,6 +36,7 @@
 .fact { padding: 10px 0; border-top: var(--border) solid var(--line); }
 .fact .meta { font-size: 12px; font-weight: 700; color: var(--muted); }
 .fact .status { margin-left: 6px; padding: 0 6px; border: 1px solid var(--muted); border-radius: var(--pill); font-weight: 600; text-transform: uppercase; font-size: 10px; }
+.fact .kind { margin-left: 6px; padding: 0 6px; border-radius: var(--pill); background: var(--soft); border: 1px solid var(--line); font-weight: 600; text-transform: uppercase; font-size: 10px; }
 .fact .ratio { font-weight: 700; margin-top: 2px; }
 .fact p { margin: 2px 0 4px; }
 .fact.gap p { color: var(--muted); font-style: italic; }

@@ -1,4 +1,4 @@
-import { isGap, type Fact } from '../data/fact';
+import { isFinding, isGap, type Fact } from '../data/fact';
 import { formatComparison } from '../lib/format';
 
 /** `cite` is the source number on the Sources page. The full citation shows on hover. */
@@ -11,13 +11,14 @@ export default function FactCard({ fact, who, cite }: { fact: Fact; who?: string
       <div className="meta">
         {who && <span>{who} · </span>}
         {gap ? 'No data' : fact.traits.length > 1 ? 'Intersection' : fact.group}
+        {isFinding(fact) && <span className="kind">finding</span>}
         {fact.status !== 'verified' && (
           <span className="status" title="A second team member has not checked this number against the source yet.">
             {fact.status === 'mock' ? 'invented example' : 'not verified yet'}
           </span>
         )}
       </div>
-      {!gap && <div className="ratio">{formatComparison(fact)}</div>}
+      {!gap && !isFinding(fact) && <div className="ratio">{formatComparison(fact)}</div>}
       <p>
         {fact.statement}{' '}
         {fact.source_url ? (

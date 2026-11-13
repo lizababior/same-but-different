@@ -68,6 +68,15 @@ describe('compare', () => {
   });
 });
 
+describe('findings', () => {
+  it('show as a difference, not as a gap', () => {
+    const finding = fact('gpt-disability', 'hired', ['disabled'], { kind: 'finding', group_rate: undefined, comparison_rate: undefined, ratio: undefined, unit: undefined });
+    const hired = area(compare(person({ ability: ['wheelchair'] }), person({}), [finding]), 'hired');
+    expect(ids(hired.onlyA)).toEqual(['gpt-disability']);
+    expect(hired.gaps).toEqual([]);
+  });
+});
+
 describe('formatComparison', () => {
   it('shows the ratio with both rates', () => {
     expect(formatComparison(fact('x', 'loan', ['race:black'], { group_rate: 16.4, comparison_rate: 5.7, ratio: 2.9 }))).toBe('2.9× as likely (16.4% vs 5.7%)');

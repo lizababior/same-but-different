@@ -1,6 +1,6 @@
 import { z } from 'zod';
 import { AREA_IDS, KNOWN_TAGS } from '../lib/traits';
-import { isGap } from './fact';
+import { hasNumbers, isGap } from './fact';
 
 // Spreadsheet cells arrive as strings; treat empty cells as "not given".
 const blank = (v: unknown) => (v === '' || v === null || v === undefined ? undefined : v);
@@ -17,10 +17,13 @@ const traitList = z.preprocess(
 
 export const STATUSES = ['mock', 'draft', 'verified'] as const;
 export const UNITS = ['percent', 'dollars', 'share', 'count'] as const;
+/** Optional. Empty = inferred: numbers make a `rate`, no numbers make a `gap`. */
+export const KINDS = ['rate', 'finding', 'gap'] as const;
 
 export const FactSchema = z
   .object({
     id: z.string().trim().min(1, 'needs an id'),
+    kind: z.preprocess(blank, z.enum(KINDS).optional()),
     area: z.enum(AREA_IDS),
     traits: traitList,
     group: z.string().trim().min(1, 'needs a group'),
@@ -41,6 +44,13 @@ export const FactSchema = z
   })
   .superRefine((f, ctx) => {
     const issue = (path: string, message: string) => ctx.addIssue({ code: 'custom', path: [path], message });
+    if (f.kind === 'finding') {
+      if (hasNumbers(f)) issue('kind', 'a finding has no numbers; remove them, or leave kind empty for a rate');
+      if (!f.source_url) issue('source_url', 'a finding needs a source_url');
+      return;
+    }
+    if (f.kind === 'gap' && hasNumbers(f)) issue('kind', 'a gap has no numbers');
+    if (f.kind === 'rate' && !hasNumbers(f)) issue('kind', 'a rate needs group_rate and comparison_rate');
     if (isGap(f)) {
       if (!f.notes) issue('notes', 'a gap row (no numbers) needs notes that say why there is no data');
       return;

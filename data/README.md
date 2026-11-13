@@ -6,6 +6,7 @@
 | Column | Contents | Example |
 |---|---|---|
 | `id` | A short name. Each fact has a different name. | `loan-black-denial` |
+| `kind` | Optional. `finding` = a result from a source with no numbers (the site shows the statement and the source). Leave it empty for a normal fact (two numbers) or a gap (no numbers and a reason). | finding |
 | `area` | The area of life. Use one of these values: `education`, `hired`, `promoted`, `paid`, `loan`, `care`, `ai`. | `loan` |
 | `traits` | The trait tags for the fact. Put `;` between tags. Two or more tags make an intersection. | `race:black` |
 | `group` | The group that the fact is about. | Black applicants |
@@ -35,6 +36,9 @@
 | Sexual orientation | `orient:lgbtq` |
 | Class | `class:firstgen`, `class:pell` |
 | Skin tone | `skin:light`, `skin:mid`, `skin:dark` |
+
+## Findings (no numbers)
+Some strong results have no two rates, for example an audit study that says "GPT-4 ranked the résumé that mentioned a disability lower". Write these as a row with `kind` = `finding`: keep the number columns and `unit` empty, write the result in `statement`, and give the `source_url`. Use findings only for peer-reviewed studies or official reports, and prefer a normal fact when the source has numbers.
 
 ## Facts with no data
 Some groups have no data. For these facts, keep the number columns and `unit` empty. Write the reason in `statement` and `notes`. Record all gaps, because a gap is also a result.

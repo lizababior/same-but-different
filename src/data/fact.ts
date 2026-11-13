@@ -2,9 +2,17 @@
 import type { Fact } from './schema';
 export type { Fact };
 
-/** A gap records that no data exists for a group; it has no numbers. */
-export function isGap(f: Pick<Fact, 'group_rate' | 'comparison_rate' | 'ratio'>): boolean {
-  return f.group_rate === undefined && f.comparison_rate === undefined && f.ratio === undefined;
+type Numbers = Pick<Fact, 'group_rate' | 'comparison_rate' | 'ratio'>;
+
+/** True when the row has at least one number. */
+export const hasNumbers = (f: Numbers) => f.group_rate !== undefined || f.comparison_rate !== undefined || f.ratio !== undefined;
+
+/** A finding is a sourced result with no numbers (for example from an audit study). It is shown like a fact. */
+export const isFinding = (f: Pick<Fact, 'kind'>) => f.kind === 'finding';
+
+/** A gap records that no data exists for a group: no numbers, and not a finding. */
+export function isGap(f: Numbers & Pick<Fact, 'kind'>): boolean {
+  return !hasNumbers(f) && !isFinding(f);
 }
 
 /** The ratio shown on the site: the stored one, else computed from the rates. */
