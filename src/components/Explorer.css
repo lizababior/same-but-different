@@ -1,5 +1,5 @@
 .explorer .toolbar { display: flex; justify-content: flex-end; margin-bottom: 16px; }
-.mirror { display: grid; grid-template-columns: 1fr 360px 1fr; gap: 24px; align-items: start; }
+.mirror { display: grid; grid-template-columns: 1fr minmax(320px, 0.9fr) 1fr; gap: 48px; align-items: start; }
 .small { font-size: 13px; }
 
 /* person */
@@ -7,8 +7,10 @@
 .who .frame { width: 96px; height: 96px; flex: none; background: var(--avatar-bg); border: var(--border) solid var(--ink); border-radius: var(--radius-lg); overflow: hidden; padding: 6px; }
 .avatar { width: 100%; height: 100%; }
 .who .name { font-size: 18px; font-weight: 700; }
-.picker .group { border: 0; padding: 8px 0; margin: 0; }
-.picker legend { font-size: 12px; font-weight: 700; color: var(--muted); padding: 0; margin-bottom: 6px; }
+.picker .group { border: 0; padding: 0; margin: 0 0 16px; }
+/* Floated so its margin works (a plain legend ignores it); the title sits close to its own options. */
+.picker legend { float: left; width: 100%; font-size: 16px; font-weight: 700; color: var(--muted); padding: 0; margin: 0 0 6px; }
+.picker legend + * { clear: both; }
 .opts { display: flex; flex-wrap: wrap; gap: 6px; }
 .chip { height: 32px; padding: 0 14px; border-radius: var(--pill); border: var(--border) solid var(--line); background: var(--bg); font-weight: 600; font-size: 13px; transition: transform var(--dur-fast) var(--ease-out); }
 .chip:hover { border-color: var(--ink); }

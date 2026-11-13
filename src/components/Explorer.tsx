@@ -81,7 +81,8 @@ function AreaFacts({ c, cites }: { c: AreaComparison; cites: Map<string, number>
   ];
   return (
     <div className="area-facts">
-      <h2>{areaLabel(c.area)}</h2>
+      {/* The selected row above already shows the area name; keep the heading for screen readers only. */}
+      <h2 className="sr-only">{areaLabel(c.area)}</h2>
       {groups.map(([title, list]) => list.length > 0 && (
         <div key={title}>
           <h3>{title}</h3>
