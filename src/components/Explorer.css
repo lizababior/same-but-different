@@ -39,7 +39,8 @@
 .fact .ratio { font-weight: 700; margin-top: 2px; }
 .fact p { margin: 2px 0 4px; }
 .fact.gap p { color: var(--muted); font-style: italic; }
-.fact .src { font-size: 12px; color: var(--muted); }
+.fact .cite { font-size: 12px; font-weight: 600; color: var(--muted); white-space: nowrap; }
+.fact a.cite:hover { color: var(--ink); }
 
 @media (max-width: 1000px) {
   .mirror { grid-template-columns: 1fr 1fr; }

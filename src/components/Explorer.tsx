@@ -2,6 +2,7 @@
 import { useMemo, useState } from 'react';
 import type { Fact } from '../data/fact';
 import { compare, differs, type AreaComparison } from '../lib/compare';
+import { citationNumbers, sourceKey } from '../lib/sources';
 import { areaLabel, blankPerson, type Person } from '../lib/traits';
 import Avatar from './Avatar';
 import FactCard from './FactCard';
@@ -16,6 +17,7 @@ export default function Explorer({ facts }: { facts: Fact[] }) {
   const [selected, setSelected] = useState<string | null>(null);
 
   const areas = useMemo(() => compare(a, b, facts), [a, b, facts]);
+  const cites = useMemo(() => citationNumbers(facts), [facts]);
   const picked = areas.find((c) => c.area === selected);
   const current = (picked && hasFacts(picked) ? picked : undefined) ?? areas.find(differs);
 
@@ -38,7 +40,7 @@ export default function Explorer({ facts }: { facts: Fact[] }) {
               <AreaRow key={c.area} c={c} selected={current?.area === c.area} onSelect={() => setSelected(c.area)} />
             ))}
           </div>
-          {current ? <AreaFacts c={current} /> : <p className="hint muted">Change a trait on one side to see what differs.</p>}
+          {current ? <AreaFacts c={current} cites={cites} /> : <p className="hint muted">Change a trait on one side to see what differs.</p>}
         </section>
         <Side label={SIDES.B} person={b} other={a} shirt="#dadada" onChange={setB} />
       </div>
@@ -71,7 +73,7 @@ function AreaRow({ c, selected, onSelect }: { c: AreaComparison; selected: boole
   );
 }
 
-function AreaFacts({ c }: { c: AreaComparison }) {
+function AreaFacts({ c, cites }: { c: AreaComparison; cites: Map<string, number> }) {
   const groups: [string, Fact[]][] = [
     ['Only the left person', c.onlyA],
     ['Only the right person', c.onlyB],
@@ -83,13 +85,13 @@ function AreaFacts({ c }: { c: AreaComparison }) {
       {groups.map(([title, list]) => list.length > 0 && (
         <div key={title}>
           <h3>{title}</h3>
-          {list.map((f) => <FactCard key={f.id} fact={f} />)}
+          {list.map((f) => <FactCard key={f.id} fact={f} cite={cites.get(sourceKey(f))} />)}
         </div>
       ))}
       {c.gaps.length > 0 && (
         <div>
           <h3>No data</h3>
-          {c.gaps.map(({ fact, who }) => <FactCard key={fact.id} fact={fact} who={who === 'both' ? 'Both' : who === 'A' ? 'Left' : 'Right'} />)}
+          {c.gaps.map(({ fact, who }) => <FactCard key={fact.id} fact={fact} cite={cites.get(sourceKey(fact))} who={who === 'both' ? 'Both' : who === 'A' ? 'Left' : 'Right'} />)}
         </div>
       )}
     </div>

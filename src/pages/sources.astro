@@ -1,11 +1,11 @@
 ---
 import Base from '../layouts/Base.astro';
 import { loadFacts } from '../data';
+import { uniqueSources } from '../lib/sources';
 
 const facts = await loadFacts();
-// One entry per source, sorted by title. Sources come from the fact file, so the list stays complete.
-const sources = [...new Map(facts.map((f) => [`${f.source_title}|${f.source_url ?? ''}`, f])).values()]
-  .sort((x, y) => x.source_title.localeCompare(y.source_title));
+// One entry per source. The numbers match the [n] citations on the fact cards.
+const sources = uniqueSources(facts);
 ---
 <Base title="Sources">
   <article class="prose">
@@ -13,7 +13,7 @@ const sources = [...new Map(facts.map((f) => [`${f.source_title}|${f.source_url 
     <p>Every source behind a fact on this site. Citation style: MLA.</p>
     <ol>
       {sources.map((f) => (
-        <li>{f.source_url ? <a href={f.source_url}>{f.source_title}</a> : f.source_title}{f.year && `, ${f.year}`}</li>
+        <li>{f.source_url ? <a href={f.source_url} target="_blank" rel="noopener noreferrer">{f.source_title}</a> : f.source_title}{f.year && `, ${f.year}`}</li>
       ))}
     </ol>
     <h2>Other sources</h2>
