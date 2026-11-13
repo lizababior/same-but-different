@@ -17,3 +17,6 @@ Team Coffee, CSE 194/291A (Race, Gender & Computing), UC San Diego, Fall 2026: L
 
 ## Similar work
 Existing projects and what this site adds.
+
+## Maintenance
+Last updated: 2026-11-12. Maintenance plan: to be decided. Contact: to be decided.

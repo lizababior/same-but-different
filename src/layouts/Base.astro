@@ -1,5 +1,5 @@
 ---
-// Shared layout: header, footer with the AI-use and maintenance notes.
+// Shared layout: header, and a footer with the AI-use note.
 // Markdown pages use it through `layout:` in their frontmatter.
 import '../styles/global.css';
 
@@ -14,8 +14,6 @@ const NAV = [
   ['/gaps', 'Gaps'],
 ];
 const path = Astro.url.pathname.replace(/\/$/, '') || '/';
-// Update these by hand (maintenance note required by the course).
-const LAST_UPDATED = '2026-11-02';
 ---
 <!doctype html>
 <html lang="en">
@@ -40,8 +38,7 @@ const LAST_UPDATED = '2026-11-02';
         {frontmatter ? <article class="prose"><slot /></article> : <slot />}
       </main>
       <footer class="site-footer">
-        <span>AI use: the team used AI tools (Claude) to help with research, the prototype and the code. All conversations are saved in the project repository.</span>
-        <span>Last updated: {LAST_UPDATED} · Maintenance plan: to be decided · Contact: to be decided</span>
+        <span>AI use: the team used AI tools to help with research, the prototype and the code.</span>
         <span>Code: MIT · Facts and text: CC BY 4.0 · <a href="https://github.com/lizababior/same-but-different">GitHub</a></span>
       </footer>
     </div>
