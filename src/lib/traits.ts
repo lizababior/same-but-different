@@ -1,6 +1,7 @@
 // The one list of life areas and traits. Pickers, validation and comparison all read from here.
 
 export const AREAS = [
+  { id: 'education', label: 'Finishing college' },
   { id: 'hired', label: 'Getting hired' },
   { id: 'promoted', label: 'Getting promoted' },
   { id: 'paid', label: 'Equal pay' },

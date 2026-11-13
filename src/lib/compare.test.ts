@@ -25,8 +25,8 @@ describe('compare', () => {
     gap('nonbinary-pay', 'paid', ['gender:nonbinary']),
   ];
 
-  it('gives one comparison for each of the six life areas', () => {
-    expect(compare(blankPerson(), blankPerson(), facts).map((c) => c.area)).toEqual(['hired', 'promoted', 'paid', 'loan', 'care', 'ai']);
+  it('gives one comparison for each life area', () => {
+    expect(compare(blankPerson(), blankPerson(), facts).map((c) => c.area)).toEqual(['education', 'hired', 'promoted', 'paid', 'loan', 'care', 'ai']);
   });
 
   it('splits facts into only A, only B and both', () => {

@@ -6,7 +6,7 @@
 | Column | Contents | Example |
 |---|---|---|
 | `id` | A short name. Each fact has a different name. | `loan-black-denial` |
-| `area` | The area of life. Use one of these values: `hired`, `promoted`, `paid`, `loan`, `care`, `ai`. | `loan` |
+| `area` | The area of life. Use one of these values: `education`, `hired`, `promoted`, `paid`, `loan`, `care`, `ai`. | `loan` |
 | `traits` | The trait tags for the fact. Put `;` between tags. Two or more tags make an intersection. | `race:black` |
 | `group` | The group that the fact is about. | Black applicants |
 | `group_rate` | The number for the group: a rate, a share or an amount. Write the number only, with no `%` or `$`. | 16.4 |
