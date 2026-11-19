@@ -27,11 +27,19 @@ export default function Explorer({ facts }: { facts: Fact[] }) {
     setSelected(null);
   }
 
+  const differing = areas.filter(differs).length;
+
   return (
     <div className="explorer">
+      {/* Every page needs a main heading. Hidden on screen until the team agrees on the visible intro text. */}
+      <h1 className="sr-only">Compare two people</h1>
       <div className="toolbar">
         <button type="button" className="btn" onClick={reset}>Reset</button>
       </div>
+      {/* Tells screen reader users that the results changed after each trait click. */}
+      <p className="sr-only" aria-live="polite">
+        {differing === 0 ? 'No differences yet.' : `${differing} life ${differing === 1 ? 'area differs' : 'areas differ'}.`}
+      </p>
       <div className="mirror">
         <Side label={SIDES.A} person={a} other={b} shirt="#ffffff" onChange={setA} />
         <section className="center" aria-label="Life areas">
