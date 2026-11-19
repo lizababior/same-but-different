@@ -22,7 +22,7 @@ export default function FactCard({ fact, who, cite }: { fact: Fact; who?: string
       <p>
         {fact.statement}{' '}
         {fact.source_url ? (
-          <a className="cite" href={fact.source_url} target="_blank" rel="noopener noreferrer" title={citation} aria-label={`Source: ${citation} (opens in a new tab)`}>
+          <a className="cite" href={fact.source_url} target="_blank" rel="noopener noreferrer" title={citation} aria-label={`${label} Source: ${citation} (opens in a new tab)`}>
             {label}
           </a>
         ) : (

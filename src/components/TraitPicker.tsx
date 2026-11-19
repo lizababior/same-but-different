@@ -54,6 +54,8 @@ export default function TraitPicker({ person, other, onChange }: Props) {
                   onClick={() => toggle(g.key, value, g.multi)}
                 >
                   {label}
+                  {/* The yellow and dashed styles show this on screen; say it to screen readers too. */}
+                  {unshared && <span className="sr-only">{on ? ' (only this person)' : ' (only the other person)'}</span>}
                 </button>
               );
             })}
