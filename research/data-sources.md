@@ -49,7 +49,6 @@ Scope: the best **primary** source for each life area × trait, a check of the 2
 | Trait | Source | What it measures | Latest year | Cadence | Access | URL |
 |---|---|---|---|---|---|---|
 | Gender | Census, *Income in the US: 2025* (P60-289) | women/men median earnings, full-time year-round: **83.9%** (80.6% in 2024) | 2025 (pub. Sept 15, 2026) | yearly | PDF + Excel tables | https://www.census.gov/library/publications/2026/demo/p60-289.html |
-| Gender (weekly) | BLS "Highlights of Women's Earnings" | weekly earnings ratio 83% (2024); by race, age, occupation | 2024 | yearly | HTML/Excel | https://www.bls.gov/opub/reports/womens-earnings/2024/home.htm |
 | Race × gender | Census CPS ASEC detailed tables (PINC-05 etc.); NWLC/Equal Pay Days are calculations on them | Black women 65¢ per white non-Hispanic man's $ (2024 data, NWLC 2026); Latinas 58¢ (2023 data, NWLC 2025) | 2024 / 2023 | yearly | Excel (Census); NWLC fact sheets = secondary | https://www.census.gov/data/tables/time-series/demo/income-poverty/cps-pinc.html |
 | Race, sex, age | BLS usual weekly earnings (quarterly release) | medians by race × sex, age | quarterly | quarterly | HTML/CSV | https://www.bls.gov/news.release/wkyeng.toc.htm |
 | Disability | Census ACS (table B18140 median earnings by disability) | earnings by disability status | 2024 1-yr | yearly | API/CSV | https://data.census.gov/ |
@@ -62,7 +61,6 @@ Scope: the best **primary** source for each life area × trait, a check of the 2
 |---|---|---|---|---|---|---|
 | Race, ethnicity, sex, age | **HMDA Data Browser + API** (FFIEC/CFPB) | applications, denials, pricing; ~7M+ applications/yr | 2024 (2025 expected ~mid-2026, check) | yearly | free API/CSV (tested) | https://ffiec.cfpb.gov/data-browser/ |
 | Race (official headline) | FFIEC HMDA release | conventional home-purchase denial rates 2023: Black 16.6%, Hispanic-White 12.0%, Asian 9.0%, non-Hispanic White 5.8% | 2023 | yearly | press release | https://www.consumerfinance.gov/about-us/newsroom/ffiec-publishes-2023-data-on-mortgage-lending/ |
-| Race, sex (my API pull, all loan types/purposes, denied ÷ originated+approved+denied) | HMDA API | 2024: Black 36.7%, AIAN 37.0%, NHPI 38.7%, Asian 21.3%, White (incl. Hispanic) 21.8%; Hispanic 30.5% vs non-Hispanic 22.7%; Female 29.3%, Male 26.4%, Joint 18.3% | 2024 | yearly | API | https://ffiec.cfpb.gov/v2/data-browser-api/view/nationwide/aggregations?years=2024&races=White,Black%20or%20African%20American&actions_taken=1,2,3 |
 | Race (controlled) | St. Louis Fed Review, "Determinants of Mortgage Denial" | with lender + financial controls, Black applicants 7.8 pp more likely denied (2018–24) | 2026 | one-off | free | https://www.stlouisfed.org/publications/review/2026/may/determinants-of-mortgage-denial |
 | LGBTQ+ (same-sex couples) | Sun & Gao, *PNAS* | same-sex co-applicants 73% more likely denied, paid higher fees, no higher default (HMDA 1990–2015) | 2019 | one-off | open | https://www.pnas.org/doi/10.1073/pnas.1903592116 |
 | Disability, religion, first-gen, nonbinary | HMDA doesn't collect them (sex is male/female only) | gap | | | | |
@@ -99,8 +97,6 @@ Scope: the best **primary** source for each life area × trait, a check of the 2
 | Trait | Source | Latest | URL |
 |---|---|---|---|
 | LGBTQ+ share | Gallup: ~9% of US adults (9.3% in 2024); 23% of under-30s | 2025 (pub. Feb 2026) | https://news.gallup.com/topic/lgbt.aspx |
-| Muslim Americans' discrimination | Pew 2017 Survey of US Muslims (verify figures) | 2017 | https://www.pewresearch.org/religion/2017/07/26/u-s-muslims-concerned-about-their-place-in-society-but-continue-to-believe-in-the-american-dream/ |
-| Disability in games (meta card) | Abbott & Cornwell, Meaningful Play 2016 abstract | 2016 | https://meaningfulplay.msu.edu/proceedings2016/abstract.php?paperid=6 |
 
 ## UCSD education data
 **Bottom line:** the data *is* downloadable, but via UCOP's Tableau server, not UCSD's.
