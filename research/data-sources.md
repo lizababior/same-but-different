@@ -2,6 +2,8 @@
 
 ⚠ Save the AI conversation behind this file; it's submitted with the final deliverables.
 
+**Status column:** "reviewed" = a team member opened the source and took facts from it or decided to skip it. Empty = nobody has looked at it yet. When you review a source, write "reviewed" in its row.
+
 Scope: the best **primary** source for each life area × trait, a check of the 27 placeholder `FACTS` in `prototype/avatar-doors-PROTOTYPE.html`, UCSD data access, and gaps. "Verify" = the figure came from the abstract or secondary coverage, and someone should open the paper before it ships. Access: **CSV/API** = machine-readable, **PDF** = tables in a report, **paywall** = journal (use the open preprint link if one is given).
 
 ## Summary: top sources to build on
@@ -20,98 +22,98 @@ Scope: the best **primary** source for each life area × trait, a check of the 2
 | 11 | **Women in the Workplace (McKinsey & LeanIn)** + EEOC EEO-1 | promotion × gender, race | only big promotion-pipeline source; EEO-1 is official | yearly |
 
 ## Getting hired
-| Trait | Source | What it measures | Latest year | Cadence | Access | URL |
-|---|---|---|---|---|---|---|
-| Race (Black, white) | Bertrand & Mullainathan, *AER* | callbacks, identical résumés: white names 9.65% vs Black 6.45% (≈50% more) | 2004 (data 2001–02) | one-off | paywall; NBER WP free | https://www.aeaweb.org/articles?id=10.1257/0002828042002561 |
-| Race (Black) | Kline, Rose & Walters, *QJE* | 83,000+ applications to 108 of the largest US employers; Black names 2.1 pp less contact, concentrated in some firms | 2022 (data 2019–21) | one-off (+ firm report card follow-up) | NBER WP free | https://www.nber.org/papers/w29053 |
-| Race (Black, Hispanic) | Quillian, Pager, Hexel & Midtbøen, *PNAS* meta-analysis | 28 field experiments since 1989: whites got 36% more callbacks than Black and 24% more than Latino applicants; no decline for Black applicants in 25 years | 2017 | one-off | open (PMC) | https://pmc.ncbi.nlm.nih.gov/articles/PMC5642692/ |
-| Disability | Ameri et al., *ILR Review* | 6,016 accounting jobs; disclosing spinal cord injury or Asperger's got 26% fewer expressions of interest | 2018 (NBER 2015) | one-off | NBER WP free | https://www.nber.org/papers/w21560 |
-| Disability | BLS "Persons with a Disability: Labor Force Characteristics" | unemployment 8.3% (disability) vs 4.1% (none); employment ratio 22.8% vs 65.2%; cut by sex, race, age, education | 2025 (pub. Mar 2026) | yearly (Feb/Mar) | HTML/PDF tables + CPS microdata | https://www.bls.gov/news.release/disabl.nr0.htm |
-| Age (60s), age × gender | Neumark, Burn & Button, *JPE* | 40,000+ applications, 13,000+ jobs, 12 cities; lower callbacks for 64–66 vs 29–31; strongest for older women | 2019 | one-off | NBER WP w21669 free | https://www.journals.uchicago.edu/doi/10.1086/701029 |
-| LGBTQ+ (gay men) | Tilcsik, *AJS* | 1,769 résumé pairs, 7 states: 11.5% vs 7.2% callbacks (straight got ~1.6×) | 2011 (data 2005) | one-off | paywall | https://www.journals.uchicago.edu/doi/10.1086/661653 |
-| LGBTQ+ (all) | Williams Institute, "LGBTQ People's Experiences of Workplace Discrimination" | 47% lifetime discrimination or harassment at work; higher for trans/nonbinary and LGBTQ people of color | 2024 (survey 2023) | periodic | PDF | https://williamsinstitute.law.ucla.edu/publications/lgbt-workplace-discrimination/ |
-| Religion (Muslim + hijab) | Ghumman & Ryan, *Human Relations* | in-person job seeking with or without a hijab (112 trials): fewer callbacks, less permission to apply, more negativity | 2013 | one-off | paywall | https://journals.sagepub.com/doi/10.1177/0018726712469540 |
-| Religion (Muslim, Jewish) | Wright et al. (New England 2013; South, *Social Currents* 2014) | résumé religion signals: any religion got ~19–26% fewer responses; Muslims hit hardest; Jewish applicants no detectable penalty (South study) | 2013/2014 | one-off | paywall; figures differ across coverage (verify) | https://today.uconn.edu/2014/06/great-resume-too-bad-about-your-religion |
-| Class (first-gen/low-income signal) × gender | Rivera & Tilcsik, *ASR* | law-firm audit, 316 offices: higher-class men got the most interviews; higher-class women penalized | 2016 | one-off | paywall | https://journals.sagepub.com/doi/10.1177/0003122416668154 |
-| Race, sex, age (official) | BLS CPS Employment Situation, tables A-2/A-3/A-4 | unemployment by race, sex, age | monthly | monthly | CSV via BLS data tools | https://www.bls.gov/cps/tables.htm |
-| Skin tone | (no US hiring audit on skin tone found) | gap: see Gaps | | | | |
+| Trait | Source | What it measures | Latest year | Cadence | Access | URL | Status |
+|---|---|---|---|---|---|---|---|
+| Race (Black, white) | Bertrand & Mullainathan, *AER* | callbacks, identical résumés: white names 9.65% vs Black 6.45% (≈50% more) | 2004 (data 2001–02) | one-off | paywall; NBER WP free | https://www.aeaweb.org/articles?id=10.1257/0002828042002561 | reviewed |
+| Race (Black) | Kline, Rose & Walters, *QJE* | 83,000+ applications to 108 of the largest US employers; Black names 2.1 pp less contact, concentrated in some firms | 2022 (data 2019–21) | one-off (+ firm report card follow-up) | NBER WP free | https://www.nber.org/papers/w29053 | reviewed |
+| Race (Black, Hispanic) | Quillian, Pager, Hexel & Midtbøen, *PNAS* meta-analysis | 28 field experiments since 1989: whites got 36% more callbacks than Black and 24% more than Latino applicants; no decline for Black applicants in 25 years | 2017 | one-off | open (PMC) | https://pmc.ncbi.nlm.nih.gov/articles/PMC5642692/ | |
+| Disability | Ameri et al., *ILR Review* | 6,016 accounting jobs; disclosing spinal cord injury or Asperger's got 26% fewer expressions of interest | 2018 (NBER 2015) | one-off | NBER WP free | https://www.nber.org/papers/w21560 | |
+| Disability | BLS "Persons with a Disability: Labor Force Characteristics" | unemployment 8.3% (disability) vs 4.1% (none); employment ratio 22.8% vs 65.2%; cut by sex, race, age, education | 2025 (pub. Mar 2026) | yearly (Feb/Mar) | HTML/PDF tables + CPS microdata | https://www.bls.gov/news.release/disabl.nr0.htm | reviewed |
+| Age (60s), age × gender | Neumark, Burn & Button, *JPE* | 40,000+ applications, 13,000+ jobs, 12 cities; lower callbacks for 64–66 vs 29–31; strongest for older women | 2019 | one-off | NBER WP w21669 free | https://www.journals.uchicago.edu/doi/10.1086/701029 | reviewed |
+| LGBTQ+ (gay men) | Tilcsik, *AJS* | 1,769 résumé pairs, 7 states: 11.5% vs 7.2% callbacks (straight got ~1.6×) | 2011 (data 2005) | one-off | paywall | https://www.journals.uchicago.edu/doi/10.1086/661653 | |
+| LGBTQ+ (all) | Williams Institute, "LGBTQ People's Experiences of Workplace Discrimination" | 47% lifetime discrimination or harassment at work; higher for trans/nonbinary and LGBTQ people of color | 2024 (survey 2023) | periodic | PDF | https://williamsinstitute.law.ucla.edu/publications/lgbt-workplace-discrimination/ | reviewed |
+| Religion (Muslim + hijab) | Ghumman & Ryan, *Human Relations* | in-person job seeking with or without a hijab (112 trials): fewer callbacks, less permission to apply, more negativity | 2013 | one-off | paywall | https://journals.sagepub.com/doi/10.1177/0018726712469540 | |
+| Religion (Muslim, Jewish) | Wright et al. (New England 2013; South, *Social Currents* 2014) | résumé religion signals: any religion got ~19–26% fewer responses; Muslims hit hardest; Jewish applicants no detectable penalty (South study) | 2013/2014 | one-off | paywall; figures differ across coverage (verify) | https://today.uconn.edu/2014/06/great-resume-too-bad-about-your-religion | |
+| Class (first-gen/low-income signal) × gender | Rivera & Tilcsik, *ASR* | law-firm audit, 316 offices: higher-class men got the most interviews; higher-class women penalized | 2016 | one-off | paywall | https://journals.sagepub.com/doi/10.1177/0003122416668154 | |
+| Race, sex, age (official) | BLS CPS Employment Situation, tables A-2/A-3/A-4 | unemployment by race, sex, age | monthly | monthly | CSV via BLS data tools | https://www.bls.gov/cps/tables.htm | |
+| Skin tone | (no US hiring audit on skin tone found) | gap: see Gaps | | | | | |
 
 ## Getting promoted
-| Trait | Source | What it measures | Latest year | Cadence | Access | URL |
-|---|---|---|---|---|---|---|
-| Gender (top) | Fortune 500 list | 56 women CEOs = 11.2% (record) | 2026 | yearly (June) | article | https://www.fortune.com/2026/06/03/gm-fortune-500-highest-ranking-company-female-ceo-elevance-health-centene/ |
-| Gender, gender × race | Women in the Workplace (McKinsey & LeanIn) | "broken rung": 81 women per 100 men promoted to first-level manager; Black women 54, Latinas 65 (figures from secondary coverage, verify against PDF) | 2025 report (11th) | yearly (fall) | PDF only, no dataset | https://womenintheworkplace.com/ |
-| Race × sex by job level | EEOC EEO-1 (Component 1) public-use data / EEOC Explore | share of "Executive/Senior Officials" vs workforce, by race × sex × industry × state | 2021–22 data (check newest PUF) | yearly-ish | CSV download | https://www.eeoc.gov/data/eeo-1-data-collection |
-| Asian American | Ascend Foundation, "Hidden in Plain Sight" | 5 Silicon Valley firms, 2013 EEO-1: Asians 27% of professionals but 14% of executives; white workers ~154% more likely to be execs | 2015 | series (newer Ascend reports exist) | PDF | https://www.ascendleadership.org/research |
-| Disability, LGBTQ+, age, religion, class | none national | gap | | | | |
+| Trait | Source | What it measures | Latest year | Cadence | Access | URL | Status |
+|---|---|---|---|---|---|---|---|
+| Gender (top) | Fortune 500 list | 56 women CEOs = 11.2% (record) | 2026 | yearly (June) | article | https://www.fortune.com/2026/06/03/gm-fortune-500-highest-ranking-company-female-ceo-elevance-health-centene/ | reviewed |
+| Gender, gender × race | Women in the Workplace (McKinsey & LeanIn) | "broken rung": 81 women per 100 men promoted to first-level manager; Black women 54, Latinas 65 (figures from secondary coverage, verify against PDF) | 2025 report (11th) | yearly (fall) | PDF only, no dataset | https://womenintheworkplace.com/ | reviewed |
+| Race × sex by job level | EEOC EEO-1 (Component 1) public-use data / EEOC Explore | share of "Executive/Senior Officials" vs workforce, by race × sex × industry × state | 2021–22 data (check newest PUF) | yearly-ish | CSV download | https://www.eeoc.gov/data/eeo-1-data-collection | |
+| Asian American | Ascend Foundation, "Hidden in Plain Sight" | 5 Silicon Valley firms, 2013 EEO-1: Asians 27% of professionals but 14% of executives; white workers ~154% more likely to be execs | 2015 | series (newer Ascend reports exist) | PDF | https://www.ascendleadership.org/research | |
+| Disability, LGBTQ+, age, religion, class | none national | gap | | | | | |
 
 ## Equal pay
-| Trait | Source | What it measures | Latest year | Cadence | Access | URL |
-|---|---|---|---|---|---|---|
-| Gender | Census, *Income in the US: 2025* (P60-289) | women/men median earnings, full-time year-round: **83.9%** (80.6% in 2024) | 2025 (pub. Sept 15, 2026) | yearly | PDF + Excel tables | https://www.census.gov/library/publications/2026/demo/p60-289.html |
-| Race × gender | Census CPS ASEC detailed tables (PINC-05 etc.); NWLC/Equal Pay Days are calculations on them | Black women 65¢ per white non-Hispanic man's $ (2024 data, NWLC 2026); Latinas 58¢ (2023 data, NWLC 2025) | 2024 / 2023 | yearly | Excel (Census); NWLC fact sheets = secondary | https://www.census.gov/data/tables/time-series/demo/income-poverty/cps-pinc.html |
-| Race, sex, age | BLS usual weekly earnings (quarterly release) | medians by race × sex, age | quarterly | quarterly | HTML/CSV | https://www.bls.gov/news.release/wkyeng.toc.htm |
-| Disability | Census ACS (table B18140 median earnings by disability) | earnings by disability status | 2024 1-yr | yearly | API/CSV | https://data.census.gov/ |
-| Skin tone (immigrants) | Hersch, *J. Labor Econ.* | lightest-skinned immigrants earn ~17% more than comparable darkest-skinned (New Immigrant Survey 2003) | 2008 | one-off | free copy (Boston Fed PDF) | https://www.bostonfed.org/-/media/Documents/cb/PDF/Hersch_immigrant_skin_color.pdf |
-| Skin tone (Latinos, perception) | Pew Research Center | 62% of Hispanic adults say darker skin hurts ability to get ahead; 64% of darker-skinned vs 54% of lighter-skinned report discrimination | 2021 | periodic | HTML + dataset | https://www.pewresearch.org/race-and-ethnicity/2021/11/04/half-of-u-s-latinos-experienced-some-form-of-discrimination-during-the-first-year-of-the-pandemic/ |
-| LGBTQ+, religion, first-gen | no official pay series (federal surveys don't ask religion; SOGI is limited) | gap | | | | |
+| Trait | Source | What it measures | Latest year | Cadence | Access | URL | Status |
+|---|---|---|---|---|---|---|---|
+| Gender | Census, *Income in the US: 2025* (P60-289) | women/men median earnings, full-time year-round: **83.9%** (80.6% in 2024) | 2025 (pub. Sept 15, 2026) | yearly | PDF + Excel tables | https://www.census.gov/library/publications/2026/demo/p60-289.html | reviewed |
+| Race × gender | Census CPS ASEC detailed tables (PINC-05 etc.); NWLC/Equal Pay Days are calculations on them | Black women 65¢ per white non-Hispanic man's $ (2024 data, NWLC 2026); Latinas 58¢ (2023 data, NWLC 2025) | 2024 / 2023 | yearly | Excel (Census); NWLC fact sheets = secondary | https://www.census.gov/data/tables/time-series/demo/income-poverty/cps-pinc.html | |
+| Race, sex, age | BLS usual weekly earnings (quarterly release) | medians by race × sex, age | quarterly | quarterly | HTML/CSV | https://www.bls.gov/news.release/wkyeng.toc.htm | reviewed |
+| Disability | Census ACS (table B18140 median earnings by disability) | earnings by disability status | 2024 1-yr | yearly | API/CSV | https://data.census.gov/ | |
+| Skin tone (immigrants) | Hersch, *J. Labor Econ.* | lightest-skinned immigrants earn ~17% more than comparable darkest-skinned (New Immigrant Survey 2003) | 2008 | one-off | free copy (Boston Fed PDF) | https://www.bostonfed.org/-/media/Documents/cb/PDF/Hersch_immigrant_skin_color.pdf | |
+| Skin tone (Latinos, perception) | Pew Research Center | 62% of Hispanic adults say darker skin hurts ability to get ahead; 64% of darker-skinned vs 54% of lighter-skinned report discrimination | 2021 | periodic | HTML + dataset | https://www.pewresearch.org/race-and-ethnicity/2021/11/04/half-of-u-s-latinos-experienced-some-form-of-discrimination-during-the-first-year-of-the-pandemic/ | |
+| LGBTQ+, religion, first-gen | no official pay series (federal surveys don't ask religion; SOGI is limited) | gap | | | | | |
 
 ## Getting a loan
-| Trait | Source | What it measures | Latest year | Cadence | Access | URL |
-|---|---|---|---|---|---|---|
-| Race, ethnicity, sex, age | **HMDA Data Browser + API** (FFIEC/CFPB) | applications, denials, pricing; ~7M+ applications/yr | 2024 (2025 expected ~mid-2026, check) | yearly | free API/CSV (tested) | https://ffiec.cfpb.gov/data-browser/ |
-| Race (official headline) | FFIEC HMDA release | conventional home-purchase denial rates 2023: Black 16.6%, Hispanic-White 12.0%, Asian 9.0%, non-Hispanic White 5.8% | 2023 | yearly | press release | https://www.consumerfinance.gov/about-us/newsroom/ffiec-publishes-2023-data-on-mortgage-lending/ |
-| Race (controlled) | St. Louis Fed Review, "Determinants of Mortgage Denial" | with lender + financial controls, Black applicants 7.8 pp more likely denied (2018–24) | 2026 | one-off | free | https://www.stlouisfed.org/publications/review/2026/may/determinants-of-mortgage-denial |
-| LGBTQ+ (same-sex couples) | Sun & Gao, *PNAS* | same-sex co-applicants 73% more likely denied, paid higher fees, no higher default (HMDA 1990–2015) | 2019 | one-off | open | https://www.pnas.org/doi/10.1073/pnas.1903592116 |
-| Disability, religion, first-gen, nonbinary | HMDA doesn't collect them (sex is male/female only) | gap | | | | |
+| Trait | Source | What it measures | Latest year | Cadence | Access | URL | Status |
+|---|---|---|---|---|---|---|---|
+| Race, ethnicity, sex, age | **HMDA Data Browser + API** (FFIEC/CFPB) | applications, denials, pricing; ~7M+ applications/yr | 2024 (2025 expected ~mid-2026, check) | yearly | free API/CSV (tested) | https://ffiec.cfpb.gov/data-browser/ | reviewed |
+| Race (official headline) | FFIEC HMDA release | conventional home-purchase denial rates 2023: Black 16.6%, Hispanic-White 12.0%, Asian 9.0%, non-Hispanic White 5.8% | 2023 | yearly | press release | https://www.consumerfinance.gov/about-us/newsroom/ffiec-publishes-2023-data-on-mortgage-lending/ | reviewed |
+| Race (controlled) | St. Louis Fed Review, "Determinants of Mortgage Denial" | with lender + financial controls, Black applicants 7.8 pp more likely denied (2018–24) | 2026 | one-off | free | https://www.stlouisfed.org/publications/review/2026/may/determinants-of-mortgage-denial | reviewed |
+| LGBTQ+ (same-sex couples) | Sun & Gao, *PNAS* | same-sex co-applicants 73% more likely denied, paid higher fees, no higher default (HMDA 1990–2015) | 2019 | one-off | open | https://www.pnas.org/doi/10.1073/pnas.1903592116 | reviewed |
+| Disability, religion, first-gen, nonbinary | HMDA doesn't collect them (sex is male/female only) | gap | | | | | |
 
 ## Quality health care
-| Trait | Source | What it measures | Latest year | Cadence | Access | URL |
-|---|---|---|---|---|---|---|
-| Race × gender (maternal) | NCHS Health E-Stat 113 | maternal mortality per 100k births: Black 44.8, White 14.2 (≈3.2×), Hispanic 12.1, Asian 18.1; age 40+ 62.3 | 2024 (pub. Mar 2026) | yearly | HTML/PDF; CDC WONDER for custom | https://www.cdc.gov/nchs/data/hestat/hestat113.htm |
-| Race (life expectancy) | NCHS *US Life Tables, 2024* (NVSR 75-5) | AIAN 71.1, Black 74.8, White 78.9, Hispanic 81.8, Asian 85.8, total 79.0 | 2024 (pub. Aug 2026) | yearly | PDF + Excel | https://www.cdc.gov/nchs/data/nvsr/nvsr75/nvsr75-05.pdf |
-| Race, income, age, sex | AHRQ NHQDR | share of quality measures where each group got worse care than White (2022 ed.: Black 85/190, AIAN 47/110, NHPI 27/73) | 2025 ed. (check numbers) | yearly | PDF + data tool | https://www.ahrq.gov/research/findings/nhqrdr/index.html |
-| Race (clinician beliefs) | Hoffman et al., *PNAS* | ~half of 222 white med students/residents endorsed ≥1 false biological-difference belief; linked to lower pain ratings | 2016 | one-off | open | https://www.pnas.org/doi/10.1073/pnas.1516047113 |
-| Race (algorithm) | Obermeyer et al., *Science* | care-management algorithm used cost as proxy for need, so Black patients were sicker at the same score | 2019 | one-off | paywall | https://www.science.org/doi/10.1126/science.aax2342 |
-| Disability | Iezzoni et al., *Health Affairs* | 714 physicians: only 40.7% very confident they give disabled patients the same quality of care | 2021 | one-off | paywall | https://www.healthaffairs.org/doi/10.1377/hlthaff.2020.01452 |
-| LGBTQ+ | CDC BRFSS SOGI module / NHIS sexual orientation | access, insurance, outcomes | yearly (state-optional module) | yearly | CSV | https://www.cdc.gov/brfss/ |
-| Religion, first-gen, skin tone | none national | gap | | | | |
+| Trait | Source | What it measures | Latest year | Cadence | Access | URL | Status |
+|---|---|---|---|---|---|---|---|
+| Race × gender (maternal) | NCHS Health E-Stat 113 | maternal mortality per 100k births: Black 44.8, White 14.2 (≈3.2×), Hispanic 12.1, Asian 18.1; age 40+ 62.3 | 2024 (pub. Mar 2026) | yearly | HTML/PDF; CDC WONDER for custom | https://www.cdc.gov/nchs/data/hestat/hestat113.htm | reviewed |
+| Race (life expectancy) | NCHS *US Life Tables, 2024* (NVSR 75-5) | AIAN 71.1, Black 74.8, White 78.9, Hispanic 81.8, Asian 85.8, total 79.0 | 2024 (pub. Aug 2026) | yearly | PDF + Excel | https://www.cdc.gov/nchs/data/nvsr/nvsr75/nvsr75-05.pdf | reviewed |
+| Race, income, age, sex | AHRQ NHQDR | share of quality measures where each group got worse care than White (2022 ed.: Black 85/190, AIAN 47/110, NHPI 27/73) | 2025 ed. (check numbers) | yearly | PDF + data tool | https://www.ahrq.gov/research/findings/nhqrdr/index.html | |
+| Race (clinician beliefs) | Hoffman et al., *PNAS* | ~half of 222 white med students/residents endorsed ≥1 false biological-difference belief; linked to lower pain ratings | 2016 | one-off | open | https://www.pnas.org/doi/10.1073/pnas.1516047113 | |
+| Race (algorithm) | Obermeyer et al., *Science* | care-management algorithm used cost as proxy for need, so Black patients were sicker at the same score | 2019 | one-off | paywall | https://www.science.org/doi/10.1126/science.aax2342 | |
+| Disability | Iezzoni et al., *Health Affairs* | 714 physicians: only 40.7% very confident they give disabled patients the same quality of care | 2021 | one-off | paywall | https://www.healthaffairs.org/doi/10.1377/hlthaff.2020.01452 | reviewed |
+| LGBTQ+ | CDC BRFSS SOGI module / NHIS sexual orientation | access, insurance, outcomes | yearly (state-optional module) | yearly | CSV | https://www.cdc.gov/brfss/ | |
+| Religion, first-gen, skin tone | none national | gap | | | | | |
 
 ## Recognized by AI
-| Trait | Source | What it measures | Latest year | Cadence | Access | URL |
-|---|---|---|---|---|---|---|
-| Skin tone × gender (face) | Buolamwini & Gebru, "Gender Shades" (FAT* / PMLR) | gender-classification error: darker-skinned women up to 34.7%, lighter-skinned men 0.8% (3 commercial APIs, 2017) | 2018 | one-off (2019 follow-up: Raji & Buolamwini) | open | https://proceedings.mlr.press/v81/buolamwini18a.html |
-| Race, sex, age (face) | NIST NISTIR 8280 + FRTE 1:1 report cards | false matches higher for African American, Asian and **American Indian** faces in US-developed algorithms (AI highest in domestic mugshots); women > men | 2019 report; report cards ongoing | continuous | PDF + per-algorithm HTML | https://pages.nist.gov/frvt/html/frvt_demographics.html |
-| Gender identity (trans, nonbinary) | Scheuerman, Paul & Brubaker, CSCW | 10 commercial face services: worse on trans people; nonbinary people misclassified every time (binary labels only) | 2019 | one-off | open PDF | https://cmci.colorado.edu/idlab/assets/bibliography/pdf/Scheuerman2019-cscw-gender.pdf |
-| Race (speech) | Koenecke et al., *PNAS* | 5 ASR systems: word error rate 0.35 Black vs 0.19 white speakers | 2020 (2019 systems) | one-off | open | https://www.pnas.org/doi/10.1073/pnas.1915768117 |
-| Deaf (speech) | Zhao, Choi, Koenecke & Rameau, *Laryngoscope* | 4 APIs incl. Whisper: WER 52.6% deaf/hard-of-hearing vs 5.0% hearing speakers | 2024 | one-off | free PDF | https://koenecke.infosci.cornell.edu/files/Laryngoscope_Zhao2024.pdf |
-| Race (dialect, LLM) | Hofmann, Kalluri, Jurafsky & King, *Nature* | LLMs covertly assign African American English speakers less prestigious jobs and harsher sentences | 2024 | one-off | open | https://www.nature.com/articles/s41586-024-07856-5 |
-| Race × gender (LLM hiring) | Wilson & Caliskan, AIES | embedding résumé retrieval favored white names in 85.1% of tests, women's names 11.1%; Black men disadvantaged in up to 100% | 2024 | one-off | open | https://ojs.aaai.org/index.php/AIES/article/view/31748 |
-| Race, gender (LLM hiring, newest) | Gao, Jiang & Yan, arXiv | 14 LLMs: GPT-3.5 (2023) shows +2.12 pp pro-white gap; 2024+ models no gap or a pro-Black gap up to ~3 pp; same on gender | 2026 (preprint) | one-off | open | https://arxiv.org/abs/2606.28978 |
-| Race (LLM hiring, journalism) | Bloomberg, GPT-3.5/4 résumé ranking | Black-distinct names least likely ranked top for some roles; data on GitHub (methods disputed by interviewing.io) | 2024 | one-off | open data | https://github.com/BloombergGraphics/2024-openai-gpt-hiring-racial-discrimination |
-| Disability (LLM hiring) | Glazko et al., FAccT | GPT-4 ranked résumés with disability-related awards lower; custom instructions cut bias for 5 of 6 | 2024 | one-off | open | https://facctconference.org/static/papers24/facct24-48.pdf |
-| Religion (Muslim, LLM) | Abid, Farooqi & Zou, AIES | GPT-3 completed "Two Muslims walked into a…" with violence 66% of the time | 2021 | one-off | open | https://arxiv.org/abs/2101.05783 |
-| Age (LLM hiring) | none found (only Mobley v. Workday lawsuit allegations) | gap | | | | |
+| Trait | Source | What it measures | Latest year | Cadence | Access | URL | Status |
+|---|---|---|---|---|---|---|---|
+| Skin tone × gender (face) | Buolamwini & Gebru, "Gender Shades" (FAT* / PMLR) | gender-classification error: darker-skinned women up to 34.7%, lighter-skinned men 0.8% (3 commercial APIs, 2017) | 2018 | one-off (2019 follow-up: Raji & Buolamwini) | open | https://proceedings.mlr.press/v81/buolamwini18a.html | reviewed |
+| Race, sex, age (face) | NIST NISTIR 8280 + FRTE 1:1 report cards | false matches higher for African American, Asian and **American Indian** faces in US-developed algorithms (AI highest in domestic mugshots); women > men | 2019 report; report cards ongoing | continuous | PDF + per-algorithm HTML | https://pages.nist.gov/frvt/html/frvt_demographics.html | reviewed |
+| Gender identity (trans, nonbinary) | Scheuerman, Paul & Brubaker, CSCW | 10 commercial face services: worse on trans people; nonbinary people misclassified every time (binary labels only) | 2019 | one-off | open PDF | https://cmci.colorado.edu/idlab/assets/bibliography/pdf/Scheuerman2019-cscw-gender.pdf | reviewed |
+| Race (speech) | Koenecke et al., *PNAS* | 5 ASR systems: word error rate 0.35 Black vs 0.19 white speakers | 2020 (2019 systems) | one-off | open | https://www.pnas.org/doi/10.1073/pnas.1915768117 | reviewed |
+| Deaf (speech) | Zhao, Choi, Koenecke & Rameau, *Laryngoscope* | 4 APIs incl. Whisper: WER 52.6% deaf/hard-of-hearing vs 5.0% hearing speakers | 2024 | one-off | free PDF | https://koenecke.infosci.cornell.edu/files/Laryngoscope_Zhao2024.pdf | reviewed |
+| Race (dialect, LLM) | Hofmann, Kalluri, Jurafsky & King, *Nature* | LLMs covertly assign African American English speakers less prestigious jobs and harsher sentences | 2024 | one-off | open | https://www.nature.com/articles/s41586-024-07856-5 | reviewed |
+| Race × gender (LLM hiring) | Wilson & Caliskan, AIES | embedding résumé retrieval favored white names in 85.1% of tests, women's names 11.1%; Black men disadvantaged in up to 100% | 2024 | one-off | open | https://ojs.aaai.org/index.php/AIES/article/view/31748 | reviewed |
+| Race, gender (LLM hiring, newest) | Gao, Jiang & Yan, arXiv | 14 LLMs: GPT-3.5 (2023) shows +2.12 pp pro-white gap; 2024+ models no gap or a pro-Black gap up to ~3 pp; same on gender | 2026 (preprint) | one-off | open | https://arxiv.org/abs/2606.28978 | reviewed |
+| Race (LLM hiring, journalism) | Bloomberg, GPT-3.5/4 résumé ranking | Black-distinct names least likely ranked top for some roles; data on GitHub (methods disputed by interviewing.io) | 2024 | one-off | open data | https://github.com/BloombergGraphics/2024-openai-gpt-hiring-racial-discrimination | reviewed |
+| Disability (LLM hiring) | Glazko et al., FAccT | GPT-4 ranked résumés with disability-related awards lower; custom instructions cut bias for 5 of 6 | 2024 | one-off | open | https://facctconference.org/static/papers24/facct24-48.pdf | reviewed |
+| Religion (Muslim, LLM) | Abid, Farooqi & Zou, AIES | GPT-3 completed "Two Muslims walked into a…" with violence 66% of the time | 2021 | one-off | open | https://arxiv.org/abs/2101.05783 | reviewed |
+| Age (LLM hiring) | none found (only Mobley v. Workday lawsuit allegations) | gap | | | | | |
 
 ## Other traits: population context (for denominators)
-| Trait | Source | Latest | URL |
-|---|---|---|---|
-| LGBTQ+ share | Gallup: ~9% of US adults (9.3% in 2024); 23% of under-30s | 2025 (pub. Feb 2026) | https://news.gallup.com/topic/lgbt.aspx |
+| Trait | Source | Latest | URL | Status |
+|---|---|---|---|---|
+| LGBTQ+ share | Gallup: ~9% of US adults (9.3% in 2024); 23% of under-30s | 2025 (pub. Feb 2026) | https://news.gallup.com/topic/lgbt.aspx | |
 
 ## UCSD education data
 **Bottom line:** the data *is* downloadable, but via UCOP's Tableau server, not UCSD's.
 
-| Source | Breakdowns | Download? | URL |
-|---|---|---|---|
-| UCSD IR "Undergraduate Demographics" page | embeds **UCOP** dashboard (fall enrollment at a glance): residency, gender, race/ethnicity, first-gen, Pell, sexual orientation (per IR index page) | **Yes.** Append `.csv` to the view: `https://visualizedata.ucop.edu/t/Public/views/fallenrollmentataglance/Ataglance.csv?CAMPUS=San%20Diego` returned UCSD rows (total 45,087 matches the CDS) | https://ir.ucsd.edu/stats/undergrad/undergrad-demogr.html |
-| UCSD IR graduation & retention; degrees conferred | school, college, major dept, gender, race/ethnicity; first-year vs transfer; **no Pell/first-gen** listed | **Not by URL.** Hosted on `tableaupublic.ucsd.edu`; `.csv` returns 404 for guests. Toolbar "Download → Crosstab" untested (try in a browser), else email ir@ucsd.edu | https://ir.ucsd.edu/stats/undergrad/ug-retention.html |
-| UCSD grad admissions | Tableau `HistoricalAdmissions` on tableaupublic.ucsd.edu; breakdowns unconfirmed (page didn't render) | same as above (unconfirmed) | https://grad.ucsd.edu/about/grad-data/admissions.html |
-| UC Info Center: undergrad admissions summary | applicants/admits/enrollees by race/ethnicity (incl. American Indian, Pacific Islander), by campus | **Yes**, `.csv` works (tested `UGAdmissionsSummaryDataTable_0/Freshmen.csv`, 2017–) | https://www.universityofcalifornia.edu/about-us/information-center/undergraduate-admissions-summary |
-| UC Info Center: graduation rates dashboard | freshman/transfer retention + graduation by campus, cohort, demographics; Highlights sheet shows overall vs **first-gen, Pell, underrepresented** | **Yes**, `.csv` works (tested `GraduationDashboardFinalRates/Highlights.csv`) | https://www.universityofcalifornia.edu/about-us/information-center/undergraduate-graduation-rates |
-| UC Info Center: first-gen dashboard; degrees awarded tables | first-gen; degrees by discipline × residency, race, gender, first-gen | likely the same `.csv` pattern (untested) | https://www.universityofcalifornia.edu/about-us/information-center/first-generation-college-students |
-| UCSD Common Data Set | B2 enrollment by race; B4–B21 6-yr graduation by **Pell / Stafford-only / neither** (2019 cohort: 81% / 86% / 89%, total 86%); B22 retention; C admissions by sex | PDF (2005–2026) | https://ir.ucsd.edu/stats/undergrad/common-data-set.html |
-| IPEDS (NCES) | graduation rates by **race × sex** (an intersection) and by Pell; enrollment by race × sex | CSV via Data Center (UCSD unit ID 110680, verify) | https://nces.ed.gov/ipeds/ |
-| College Scorecard | completion and earnings by Pell, first-gen | CSV + API | https://collegescorecard.ed.gov/data/ |
+| Source | Breakdowns | Download? | URL | Status |
+|---|---|---|---|---|
+| UCSD IR "Undergraduate Demographics" page | embeds **UCOP** dashboard (fall enrollment at a glance): residency, gender, race/ethnicity, first-gen, Pell, sexual orientation (per IR index page) | **Yes.** Append `.csv` to the view: `https://visualizedata.ucop.edu/t/Public/views/fallenrollmentataglance/Ataglance.csv?CAMPUS=San%20Diego` returned UCSD rows (total 45,087 matches the CDS) | https://ir.ucsd.edu/stats/undergrad/undergrad-demogr.html | |
+| UCSD IR graduation & retention; degrees conferred | school, college, major dept, gender, race/ethnicity; first-year vs transfer; **no Pell/first-gen** listed | **Not by URL.** Hosted on `tableaupublic.ucsd.edu`; `.csv` returns 404 for guests. Toolbar "Download → Crosstab" untested (try in a browser), else email ir@ucsd.edu | https://ir.ucsd.edu/stats/undergrad/ug-retention.html | |
+| UCSD grad admissions | Tableau `HistoricalAdmissions` on tableaupublic.ucsd.edu; breakdowns unconfirmed (page didn't render) | same as above (unconfirmed) | https://grad.ucsd.edu/about/grad-data/admissions.html | |
+| UC Info Center: undergrad admissions summary | applicants/admits/enrollees by race/ethnicity (incl. American Indian, Pacific Islander), by campus | **Yes**, `.csv` works (tested `UGAdmissionsSummaryDataTable_0/Freshmen.csv`, 2017–) | https://www.universityofcalifornia.edu/about-us/information-center/undergraduate-admissions-summary | |
+| UC Info Center: graduation rates dashboard | freshman/transfer retention + graduation by campus, cohort, demographics; Highlights sheet shows overall vs **first-gen, Pell, underrepresented** | **Yes**, `.csv` works (tested `GraduationDashboardFinalRates/Highlights.csv`) | https://www.universityofcalifornia.edu/about-us/information-center/undergraduate-graduation-rates | reviewed |
+| UC Info Center: first-gen dashboard; degrees awarded tables | first-gen; degrees by discipline × residency, race, gender, first-gen | likely the same `.csv` pattern (untested) | https://www.universityofcalifornia.edu/about-us/information-center/first-generation-college-students | |
+| UCSD Common Data Set | B2 enrollment by race; B4–B21 6-yr graduation by **Pell / Stafford-only / neither** (2019 cohort: 81% / 86% / 89%, total 86%); B22 retention; C admissions by sex | PDF (2005–2026) | https://ir.ucsd.edu/stats/undergrad/common-data-set.html | reviewed |
+| IPEDS (NCES) | graduation rates by **race × sex** (an intersection) and by Pell; enrollment by race × sex | CSV via Data Center (UCSD unit ID 110680, verify) | https://nces.ed.gov/ipeds/ | |
+| College Scorecard | completion and earnings by Pell, first-gen | CSV + API | https://collegescorecard.ed.gov/data/ | |
 
 Intersections: UCOP/UCSD dashboards filter one dimension at a time (no race × gender × first-gen seen; unconfirmed). IPEDS has race × sex. Small cells are suppressed, so show them as "no data". UCOP update schedule: https://www.universityofcalifornia.edu/about-us/information-center/dashboard-update-schedule. Filter field names in the `.csv` URL must match Tableau field names (`CAMPUS` worked).
 
