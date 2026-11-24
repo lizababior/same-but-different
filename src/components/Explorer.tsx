@@ -1,6 +1,6 @@
 // The Explore page: two people side by side, life areas in the middle.
 import { useMemo, useState } from 'react';
-import type { Fact } from '../data/fact';
+import { isGap, type Fact } from '../data/fact';
 import { compare, differs, type AreaComparison } from '../lib/compare';
 import { citationNumbers, sourceKey } from '../lib/sources';
 import { areaLabel, blankPerson, type Person } from '../lib/traits';
@@ -16,7 +16,9 @@ export default function Explorer({ facts }: { facts: Fact[] }) {
   const [b, setB] = useState<Person>(blankPerson);
   const [selected, setSelected] = useState<string | null>(null);
 
-  const areas = useMemo(() => compare(a, b, facts), [a, b, facts]);
+  // "No data" rows are listed on the Gaps page, not here.
+  const withData = useMemo(() => facts.filter((f) => !isGap(f)), [facts]);
+  const areas = useMemo(() => compare(a, b, withData), [a, b, withData]);
   const cites = useMemo(() => citationNumbers(facts), [facts]);
   const picked = areas.find((c) => c.area === selected);
   const current = (picked && hasFacts(picked) ? picked : undefined) ?? areas.find(differs);
@@ -88,7 +90,8 @@ function AreaFacts({ c, cites }: { c: AreaComparison; cites: Map<string, number>
     ['Both', c.both],
   ];
   return (
-    <div className="area-facts">
+    // tabIndex lets keyboard users focus the list and scroll it with the arrow keys.
+    <div className="area-facts" role="region" tabIndex={0} aria-label={`${areaLabel(c.area)} facts`}>
       {/* The selected row above already shows the area name; keep the heading for screen readers only. */}
       <h2 className="sr-only">{areaLabel(c.area)}</h2>
       {groups.map(([title, list]) => list.length > 0 && (
