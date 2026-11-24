@@ -8,12 +8,14 @@ const VALUE: Record<NonNullable<Fact['unit']>, (n: number) => string> = {
   share: (n) => `${num(n)}%`,
   dollars: (n) => `$${n.toLocaleString('en-US')}`,
   count: (n) => num(n),
+  years: (n) => `${num(n)} years`,
 };
 const PHRASE: Record<NonNullable<Fact['unit']>, string> = {
   percent: 'as likely',
   share: 'their share',
   dollars: 'as much',
   count: 'as many',
+  years: 'as long',
 };
 
 /** "2.9× as likely (16.4% vs 5.7%)". Empty for gaps. */

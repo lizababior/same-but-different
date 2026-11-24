@@ -46,9 +46,10 @@ export const KNOWN_TAGS = new Set<string>([
   ...TRAIT_GROUPS.flatMap((g) => g.options.map(([v]) => `${g.key}:${v}`)),
   'skin:light', 'skin:mid', 'skin:dark',
   'disabled', // derived: any ability trait
+  'race:poc', // derived: person of color = any race except white
 ]);
 
-/** The tags a person has, including derived ones (skin band, `disabled`). */
+/** The tags a person has, including derived ones (skin band, `disabled`, `race:poc`). */
 export function tagsOf(p: Person): Set<string> {
   const tags = new Set<string>([skinTag(p.skin)]);
   for (const g of TRAIT_GROUPS) {
@@ -57,11 +58,13 @@ export function tagsOf(p: Person): Set<string> {
     else if (v) tags.add(`${g.key}:${v}`);
   }
   if (p.ability.length) tags.add('disabled');
+  if (p.race && p.race !== 'white') tags.add('race:poc');
   return tags;
 }
 
 export function tagLabel(tag: string): string {
   if (tag === 'disabled') return 'Disabled';
+  if (tag === 'race:poc') return 'Person of color';
   const [key, value] = tag.split(':');
   if (key === 'skin') return `${value[0].toUpperCase()}${value.slice(1)} skin`;
   const group = TRAIT_GROUPS.find((g) => g.key === key);

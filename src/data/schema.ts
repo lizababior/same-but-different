@@ -15,8 +15,7 @@ const traitList = z.preprocess(
   z.array(z.string().refine((t) => KNOWN_TAGS.has(t), { message: 'unknown trait tag (see data/README.md)' })).min(1, 'needs at least one trait tag'),
 );
 
-export const STATUSES = ['mock', 'draft', 'verified'] as const;
-export const UNITS = ['percent', 'dollars', 'share', 'count'] as const;
+export const UNITS = ['percent', 'dollars', 'share', 'count', 'years'] as const;
 /** Optional. Empty = inferred: numbers make a `rate`, no numbers make a `gap`. */
 export const KINDS = ['rate', 'finding', 'gap'] as const;
 
@@ -37,9 +36,6 @@ export const FactSchema = z
     source_title: z.string().trim().min(1, 'needs a source_title'),
     source_url: optText,
     year: optNumber,
-    status: z.enum(STATUSES),
-    verified_by: optText,
-    verified_on: optText,
     notes: optText,
   })
   .superRefine((f, ctx) => {
@@ -66,7 +62,6 @@ export const FactSchema = z
         issue('ratio', `is ${f.ratio}, but group_rate / comparison_rate is ${expected.toFixed(2)}`);
       }
     }
-    if (f.status === 'verified' && (!f.verified_by || !f.verified_on)) issue('status', 'a verified fact needs verified_by and verified_on');
   });
 
 export type Fact = z.output<typeof FactSchema>;

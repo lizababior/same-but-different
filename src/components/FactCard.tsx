@@ -12,11 +12,6 @@ export default function FactCard({ fact, who, cite }: { fact: Fact; who?: string
         {who && <span>{who} · </span>}
         {gap ? 'No data' : fact.traits.length > 1 ? 'Intersection' : fact.group}
         {isFinding(fact) && <span className="kind">finding</span>}
-        {fact.status !== 'verified' && (
-          <span className="status" title="A second team member has not checked this number against the source yet.">
-            {fact.status === 'mock' ? 'invented example' : 'not verified yet'}
-          </span>
-        )}
       </div>
       {!gap && !isFinding(fact) && <div className="ratio">{formatComparison(fact)}</div>}
       <p>

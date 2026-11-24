@@ -6,7 +6,7 @@ import { blankPerson, type Person } from './traits';
 
 const fact = (id: string, area: Fact['area'], traits: string[], extra: Partial<Fact> = {}): Fact => ({
   id, area, traits, group: id, group_rate: 20, comparison_group: 'others', comparison_rate: 10, ratio: 2,
-  unit: 'percent', statement: id, source_title: 'MOCK', status: 'mock', ...extra,
+  unit: 'percent', statement: id, source_title: 'MOCK', ...extra,
 });
 const gap = (id: string, area: Fact['area'], traits: string[]) =>
   fact(id, area, traits, { group_rate: undefined, comparison_rate: undefined, ratio: undefined, unit: undefined, notes: 'no data' });
@@ -49,6 +49,14 @@ describe('compare', () => {
     expect(ids(area(r, 'hired').onlyA)).toEqual(['disabled-hired']);
   });
 
+  it('gives every race except white the race:poc tag', () => {
+    const poc = [fact('lgbtq-poc', 'hired', ['orient:lgbtq', 'race:poc'])];
+    for (const race of ['black', 'asian', 'multi']) {
+      expect(ids(area(compare(person({ race, orient: 'lgbtq' }), blankPerson(), poc), 'hired').onlyA)).toEqual(['lgbtq-poc']);
+    }
+    expect(area(compare(person({ race: 'white', orient: 'lgbtq' }), blankPerson(), poc), 'hired').onlyA).toEqual([]);
+  });
+
   it('turns skin tone into light, mid and dark bands', () => {
     const r = compare(person({ skin: 5 }), person({ skin: 3 }), facts);
     expect(ids(area(r, 'ai').onlyA)).toEqual(['dark-ai']);
@@ -83,6 +91,9 @@ describe('formatComparison', () => {
   });
   it('phrases pay as "as much"', () => {
     expect(formatComparison(fact('x', 'paid', ['gender:woman'], { unit: 'dollars', group_rate: 65, comparison_rate: 100, ratio: 0.65 }))).toBe('0.65× as much ($65 vs $100)');
+  });
+  it('phrases years as "as long"', () => {
+    expect(formatComparison(fact('x', 'care', ['race:native'], { unit: 'years', group_rate: 71.1, comparison_rate: 79, ratio: 0.9 }))).toBe('0.90× as long (71.1 years vs 79 years)');
   });
   it('is empty for a gap', () => {
     expect(formatComparison(gap('x', 'paid', ['gender:nonbinary']))).toBe('');

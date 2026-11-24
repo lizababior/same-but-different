@@ -1,12 +1,12 @@
 import { describe, expect, it } from 'vitest';
 import { FactDataError, parseFacts } from './parse';
 
-const HEADER = 'id,kind,area,traits,group,group_rate,comparison_group,comparison_rate,ratio,unit,measure,statement,source_title,source_url,year,status,verified_by,verified_on,notes';
+const HEADER = 'id,kind,area,traits,group,group_rate,comparison_group,comparison_rate,ratio,unit,measure,statement,source_title,source_url,year,notes';
 
 const loanFact = {
   id: 'loan-x', area: 'loan', traits: 'race:black', group: 'Group X', group_rate: '20', comparison_group: 'Group Y',
   comparison_rate: '10', ratio: '2', unit: 'percent', measure: 'denial rate', statement: 'X was denied 2× as often.',
-  source_title: 'MOCK', source_url: '', year: '2024', status: 'mock', verified_by: '', verified_on: '', notes: '',
+  source_title: 'MOCK', source_url: '', year: '2024', notes: '',
 };
 const gapFact = { ...loanFact, id: 'gap-x', traits: 'gender:nonbinary', group_rate: '', comparison_rate: '', ratio: '', unit: '', comparison_group: '', notes: 'Survey records only two genders.' };
 
@@ -71,10 +71,9 @@ describe('parseFacts', () => {
     expect(problems.find((p) => p.includes('half'))).toMatch(/comparison_rate/);
   });
 
-  it('rejects duplicate ids and verified facts without a checker', () => {
-    const problems = problemsOf(() => parseFacts(toCsv([loanFact, loanFact, { ...loanFact, id: 'v', status: 'verified' }]), 'csv'));
+  it('rejects duplicate ids', () => {
+    const problems = problemsOf(() => parseFacts(toCsv([loanFact, loanFact]), 'csv'));
     expect(problems.join('\n')).toMatch(/duplicate id/);
-    expect(problems.join('\n')).toMatch(/verified_by/);
   });
 
   it('names the formats it knows', () => {

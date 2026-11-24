@@ -4,7 +4,7 @@ This is an interactive website for CSE 194/291A (Race, Gender & Computing, UC Sa
 
 You make two people. The two people are the same, but one or two traits are different. Traits are race, gender, age, disability, religion, sexual orientation, class and skin tone. The site compares some areas of life for the two people: college, jobs, pay, loans, health care and AI recognition. Each difference has a fact about a group and a source for that fact. Some groups have no data. The site shows these gaps, because a gap is also a result.
 
-**Status:** in development. The site shows **mock facts** (invented numbers). The fact team will replace them with verified facts in `data/facts.csv`.
+**Status:** in development. The facts are in `data/facts.csv`.
 
 ## How to run the site
 You need [Bun](https://bun.sh) (`curl -fsSL https://bun.sh/install | bash`) or Node.js 22.
