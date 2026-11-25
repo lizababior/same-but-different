@@ -42,7 +42,7 @@ main { padding: 8px 0 48px; }
 .site-footer { border-top: var(--border) solid var(--line); padding: 16px 0 32px; color: var(--muted); font-size: 13px; display: grid; gap: 4px; }
 
 /* text pages (Markdown) */
-.prose { max-width: 70ch; }
+.prose { max-width: 110ch; }
 .prose h1 { font-size: 32px; letter-spacing: -0.01em; }
 .prose h2 { font-size: 20px; margin-top: 32px; }
 .todo { border: var(--border) dashed var(--line); border-radius: var(--radius); padding: 8px 12px; color: var(--muted); }
