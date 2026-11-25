@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro';
 import { loadFacts } from '../data';
 import { isGap } from '../data/fact';
-import { areaLabel, tagLabel } from '../lib/traits';
+import { areaLabel } from '../lib/traits';
 
 const gaps = (await loadFacts()).filter(isGap);
 ---
@@ -10,10 +10,21 @@ const gaps = (await loadFacts()).filter(isGap);
   <article class="prose">
     <h1>Gaps</h1>
     <p>For some groups, nobody publishes data. A missing number is also a result: a group that is not counted is harder to see.</p>
-    <p class="todo">Owner: to be decided. Add an introduction about why gaps matter (for example, Crenshaw on intersectionality).</p>
+    <h2>Why gaps matter</h2>
+    <p>Governments, companies and researchers use data to find problems and to decide where to help. If nobody counts a group, its problems can stay hidden, and the group can get less attention and less money.</p>
+    <p>Gaps have different causes:</p>
+    <ul>
+      <li>Most federal surveys record sex as male or female only, so they have no data about nonbinary people.</li>
+      <li>Federal surveys do not ask about religion, and lenders are not allowed to ask about it.</li>
+      <li>Some groups are small, so studies combine them with other groups or do not show them. For example, studies often put Pacific Islanders in the same group as Asian Americans.</li>
+    </ul>
+    <h2>Intersections</h2>
+    <p>Kimberlé Crenshaw (1989) used the word "intersectionality" to describe how different identities combine. She wrote about Black women who went to court because of discrimination at work. The courts looked at race and at sex separately, so they did not see the discrimination that Black women experienced as Black women.</p>
+    <p>Data can have the same problem. Many sources show results by race or by gender, but not by both together. Thus there is often no data for groups such as disabled LGBTQ people or Sikh women. On the Explore page, a fact with the label "Intersection" is about two or more traits together.</p>
+    <h2>Groups with no data</h2>
     <ul>
       {gaps.map((f) => (
-        <li><strong>{f.traits.map(tagLabel).join(' + ')}</strong>, {areaLabel(f.area)}: {f.notes}</li>
+        <li><strong>{f.group}</strong>, {areaLabel(f.area)}: {f.statement}</li>
       ))}
     </ul>
   </article>
